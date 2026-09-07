@@ -1,0 +1,11 @@
+.member-profile-tools { align-items: center; flex-wrap: wrap; }
+.member-profile-heading { display: flex; align-items: center; gap: 9px; }
+.member-profile-heading h2 { white-space: nowrap; }
+.member-profile-tools .payment-account-icons { align-self: center; }
+.identity-certifications { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; min-width: 0; }
+.identity-certifications .identity-certification { display: inline-flex; align-items: center; justify-content: center; gap: 4px; white-space: nowrap; line-height: 20px; }
+.identity-certification svg { display: block; flex: 0 0 15px; width: 15px; height: 15px; }
+.identity-certification > span { display: block; line-height: 20px; }
+.member-profile-data .profile-expense { color: #b85a18; font-weight: 700; }
+.member-profile-data .profile-income { color: var(--green-700); font-weight: 700; }
+.member-events-panel .finance-ledger { border-top: 0; }

@@ -1,0 +1,578 @@
+[
+  {
+    "width": 320,
+    "route": "/",
+    "overflow": false,
+    "offenders": [],
+    "badges": 0,
+    "badgeIssues": []
+  },
+  {
+    "width": 320,
+    "route": "/members",
+    "overflow": false,
+    "offenders": [],
+    "badges": 60,
+    "badgeIssues": []
+  },
+  {
+    "width": 320,
+    "route": "/members/MB20260829001",
+    "overflow": false,
+    "offenders": [],
+    "badges": 45,
+    "badgeIssues": []
+  },
+  {
+    "width": 320,
+    "route": "/tasks/FA20260829001",
+    "overflow": false,
+    "offenders": [],
+    "badges": 1,
+    "badgeIssues": []
+  },
+  {
+    "width": 320,
+    "route": "/plots",
+    "overflow": false,
+    "offenders": [],
+    "badges": 40,
+    "badgeIssues": []
+  },
+  {
+    "width": 320,
+    "route": "/plots/PL20260829023",
+    "overflow": false,
+    "offenders": [],
+    "badges": 4,
+    "badgeIssues": []
+  },
+  {
+    "width": 320,
+    "route": "/services",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 320,
+    "route": "/services/WO20260829018",
+    "overflow": false,
+    "offenders": [],
+    "badges": 2,
+    "badgeIssues": []
+  },
+  {
+    "width": 320,
+    "route": "/supply",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 320,
+    "route": "/config",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 320,
+    "route": "/settings",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 320,
+    "route": "/audit",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 390,
+    "route": "/",
+    "overflow": false,
+    "offenders": [],
+    "badges": 0,
+    "badgeIssues": []
+  },
+  {
+    "width": 390,
+    "route": "/members",
+    "overflow": false,
+    "offenders": [],
+    "badges": 60,
+    "badgeIssues": []
+  },
+  {
+    "width": 390,
+    "route": "/members/MB20260829001",
+    "overflow": false,
+    "offenders": [],
+    "badges": 45,
+    "badgeIssues": []
+  },
+  {
+    "width": 390,
+    "route": "/tasks/FA20260829001",
+    "overflow": false,
+    "offenders": [],
+    "badges": 1,
+    "badgeIssues": []
+  },
+  {
+    "width": 390,
+    "route": "/plots",
+    "overflow": false,
+    "offenders": [],
+    "badges": 40,
+    "badgeIssues": []
+  },
+  {
+    "width": 390,
+    "route": "/plots/PL20260829023",
+    "overflow": false,
+    "offenders": [],
+    "badges": 4,
+    "badgeIssues": []
+  },
+  {
+    "width": 390,
+    "route": "/services",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 390,
+    "route": "/services/WO20260829018",
+    "overflow": false,
+    "offenders": [],
+    "badges": 2,
+    "badgeIssues": []
+  },
+  {
+    "width": 390,
+    "route": "/supply",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 390,
+    "route": "/config",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 390,
+    "route": "/settings",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 390,
+    "route": "/audit",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 768,
+    "route": "/",
+    "overflow": false,
+    "offenders": [],
+    "badges": 0,
+    "badgeIssues": []
+  },
+  {
+    "width": 768,
+    "route": "/members",
+    "overflow": false,
+    "offenders": [],
+    "badges": 60,
+    "badgeIssues": []
+  },
+  {
+    "width": 768,
+    "route": "/members/MB20260829001",
+    "overflow": false,
+    "offenders": [],
+    "badges": 45,
+    "badgeIssues": []
+  },
+  {
+    "width": 768,
+    "route": "/tasks/FA20260829001",
+    "overflow": false,
+    "offenders": [],
+    "badges": 1,
+    "badgeIssues": []
+  },
+  {
+    "width": 768,
+    "route": "/plots",
+    "overflow": false,
+    "offenders": [],
+    "badges": 40,
+    "badgeIssues": []
+  },
+  {
+    "width": 768,
+    "route": "/plots/PL20260829023",
+    "overflow": false,
+    "offenders": [],
+    "badges": 4,
+    "badgeIssues": []
+  },
+  {
+    "width": 768,
+    "route": "/services",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 768,
+    "route": "/services/WO20260829018",
+    "overflow": false,
+    "offenders": [],
+    "badges": 2,
+    "badgeIssues": []
+  },
+  {
+    "width": 768,
+    "route": "/supply",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 768,
+    "route": "/config",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 768,
+    "route": "/settings",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 768,
+    "route": "/audit",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 1024,
+    "route": "/",
+    "overflow": false,
+    "offenders": [],
+    "badges": 0,
+    "badgeIssues": []
+  },
+  {
+    "width": 1024,
+    "route": "/members",
+    "overflow": false,
+    "offenders": [],
+    "badges": 60,
+    "badgeIssues": []
+  },
+  {
+    "width": 1024,
+    "route": "/members/MB20260829001",
+    "overflow": false,
+    "offenders": [],
+    "badges": 45,
+    "badgeIssues": []
+  },
+  {
+    "width": 1024,
+    "route": "/tasks/FA20260829001",
+    "overflow": false,
+    "offenders": [],
+    "badges": 1,
+    "badgeIssues": []
+  },
+  {
+    "width": 1024,
+    "route": "/plots",
+    "overflow": false,
+    "offenders": [],
+    "badges": 40,
+    "badgeIssues": []
+  },
+  {
+    "width": 1024,
+    "route": "/plots/PL20260829023",
+    "overflow": false,
+    "offenders": [],
+    "badges": 4,
+    "badgeIssues": []
+  },
+  {
+    "width": 1024,
+    "route": "/services",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 1024,
+    "route": "/services/WO20260829018",
+    "overflow": false,
+    "offenders": [],
+    "badges": 2,
+    "badgeIssues": []
+  },
+  {
+    "width": 1024,
+    "route": "/supply",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 1024,
+    "route": "/config",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 1024,
+    "route": "/settings",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 1024,
+    "route": "/audit",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 1440,
+    "route": "/",
+    "overflow": false,
+    "offenders": [],
+    "badges": 0,
+    "badgeIssues": []
+  },
+  {
+    "width": 1440,
+    "route": "/members",
+    "overflow": false,
+    "offenders": [],
+    "badges": 60,
+    "badgeIssues": []
+  },
+  {
+    "width": 1440,
+    "route": "/members/MB20260829001",
+    "overflow": false,
+    "offenders": [],
+    "badges": 45,
+    "badgeIssues": []
+  },
+  {
+    "width": 1440,
+    "route": "/tasks/FA20260829001",
+    "overflow": false,
+    "offenders": [],
+    "badges": 1,
+    "badgeIssues": []
+  },
+  {
+    "width": 1440,
+    "route": "/plots",
+    "overflow": false,
+    "offenders": [],
+    "badges": 40,
+    "badgeIssues": []
+  },
+  {
+    "width": 1440,
+    "route": "/plots/PL20260829023",
+    "overflow": false,
+    "offenders": [],
+    "badges": 4,
+    "badgeIssues": []
+  },
+  {
+    "width": 1440,
+    "route": "/services",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 1440,
+    "route": "/services/WO20260829018",
+    "overflow": false,
+    "offenders": [],
+    "badges": 2,
+    "badgeIssues": []
+  },
+  {
+    "width": 1440,
+    "route": "/supply",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 1440,
+    "route": "/config",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 1440,
+    "route": "/settings",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 1440,
+    "route": "/audit",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 1920,
+    "route": "/",
+    "overflow": false,
+    "offenders": [],
+    "badges": 0,
+    "badgeIssues": []
+  },
+  {
+    "width": 1920,
+    "route": "/members",
+    "overflow": false,
+    "offenders": [],
+    "badges": 60,
+    "badgeIssues": []
+  },
+  {
+    "width": 1920,
+    "route": "/members/MB20260829001",
+    "overflow": false,
+    "offenders": [],
+    "badges": 45,
+    "badgeIssues": []
+  },
+  {
+    "width": 1920,
+    "route": "/tasks/FA20260829001",
+    "overflow": false,
+    "offenders": [],
+    "badges": 1,
+    "badgeIssues": []
+  },
+  {
+    "width": 1920,
+    "route": "/plots",
+    "overflow": false,
+    "offenders": [],
+    "badges": 40,
+    "badgeIssues": []
+  },
+  {
+    "width": 1920,
+    "route": "/plots/PL20260829023",
+    "overflow": false,
+    "offenders": [],
+    "badges": 4,
+    "badgeIssues": []
+  },
+  {
+    "width": 1920,
+    "route": "/services",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 1920,
+    "route": "/services/WO20260829018",
+    "overflow": false,
+    "offenders": [],
+    "badges": 2,
+    "badgeIssues": []
+  },
+  {
+    "width": 1920,
+    "route": "/supply",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 1920,
+    "route": "/config",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 1920,
+    "route": "/settings",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  },
+  {
+    "width": 1920,
+    "route": "/audit",
+    "overflow": false,
+    "offenders": [],
+    "badges": 20,
+    "badgeIssues": []
+  }
+]

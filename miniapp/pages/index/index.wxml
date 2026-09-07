@@ -1,0 +1,20 @@
+<view class="page home-page">
+  <view class="home-hero">
+    <view class="hero-main">福安农事服务</view>
+    <view class="hero-slogan">服务三农 · 助力增收</view>
+    <view class="hero-sub">福安本地农事服务，省心更放心</view>
+  </view>
+  <view wx:if="{{loading}}" class="home-loading">正在加载福安服务…</view>
+  <block wx:elif="{{feed}}">
+    <view class="location-row" bindtap="goMap"><text class="pin">●</text><text>当前位置：福安市</text><text class="location-action">查看地图 ›</text></view>
+    <view class="section open-section">
+      <view class="section-title"><text>附近资源</text><text class="section-link" bindtap="goMap">查看全部 ›</text></view>
+      <view class="resource-grid"><view class="resource" wx:for="{{feed.resources}}" wx:key="name"><text class="resource-icon">{{item.icon}}</text><text>{{item.name}}</text><text class="muted">{{item.distance}}</text></view></view>
+      <view class="divider" />
+      <view class="section-title"><text>常用农事服务</text><text class="section-link" bindtap="goService">发布需求 ›</text></view>
+      <view class="service-grid"><view class="service-shortcut" wx:for="{{feed.services}}" wx:key="*this" bindtap="goService"><text class="service-symbol">✦</text><text>{{item}}</text></view></view>
+    </view>
+    <view class="reminder"><text class="notice-icon">●</text><view><strong>成熟期提醒</strong><text>{{feed.reminder.crop}} 预计 {{feed.reminder.date}} 成熟</text><small>地块：{{feed.reminder.plot}}</small></view><text>›</text></view>
+    <view class="sync-notice" bindtap="goRecords"><text class="cloud-icon">↥</text><view><strong>离线数据</strong><text>您有 {{feed.syncCount}} 条记录待同步</text></view><text class="sync-button">去同步</text></view>
+  </block>
+</view>

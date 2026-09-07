@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/plot/plot",
+    "pages/service/service",
+    "pages/order/order",
+    "pages/record/record",
+    "pages/message/message",
+    "pages/me/me",
+    "pages/map/map",
+    "pages/supply/supply"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#087944",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "福安农事服务",
+    "backgroundColor": "#f4f7f5",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#6b756f",
+    "selectedColor": "#087944",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      { "pagePath": "pages/index/index", "text": "首页" },
+      { "pagePath": "pages/plot/plot", "text": "地块" },
+      { "pagePath": "pages/service/service", "text": "服务" },
+      { "pagePath": "pages/record/record", "text": "记录" },
+      { "pagePath": "pages/me/me", "text": "我的" }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

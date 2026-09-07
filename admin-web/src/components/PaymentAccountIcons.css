@@ -1,0 +1,30 @@
+.member-finance-title { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+.member-finance-panel > .panel-head > div { width: 100%; }
+.member-finance-title h2 { margin: 0; white-space: nowrap; }
+.payment-account-icons { position: relative; display: inline-flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 6px; max-width: 100%; margin-left: auto; }
+.payment-account-icon { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 48px; padding: 6px 9px; border: 1px solid #d1e5d7; border-radius: 7px; color: var(--green-700); background: white; cursor: pointer; }
+.payment-brand-logo { width: 29px; height: 29px; overflow: hidden; display: inline-block; flex-shrink: 0; }
+.payment-brand-logo img { display: block; height: 29px; width: auto; max-width: none; }
+.payment-brand-logo.wechat-pay { width: 33px; }
+.payment-brand-logo.unionpay { width: 48px; }
+.payment-brand-logo.unionpay img { height: 29px; }
+.payment-account-label { text-align: left; white-space: nowrap; }
+.payment-account-label strong { display: block; font-size: 13px; font-weight: 600; }
+.payment-account-label small { display: block; margin-top: 3px; color: var(--muted); font-size: 10px; }
+.payment-account-icon:hover, .payment-account-icon.active { border-color: var(--green-700); background: #e6f1e9; }
+.payment-account-icon.unbound { color: var(--muted); background: #f7f8f7; border-style: dashed; }
+.payment-account-icon:focus-visible { outline: 2px solid var(--green-700); outline-offset: 2px; }
+.payment-account-popover { position: absolute; z-index: 30; top: calc(100% + 8px); right: 0; width: 250px; max-width: calc(100vw - 64px); box-sizing: border-box; padding: 14px; border: 1px solid var(--line); border-radius: 10px; background: white; box-shadow: 0 8px 28px rgb(20 55 34 / 16%); }
+.payment-account-popover > div { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.payment-account-popover > div .icon-button { width: 28px; height: 28px; }
+.payment-account-popover p { margin: 8px 0 !important; color: var(--green-700); font-size: 14px !important; overflow-wrap: anywhere; }
+.payment-account-popover small { display: block; margin-bottom: 12px; color: var(--muted); font-size: 12px; }
+.payment-account-popover > .secondary-button { width: 100%; min-height: 36px; justify-content: center; }
+@media (max-width: 400px) {
+  .member-finance-title { gap: 6px; }
+  .payment-account-icons { gap: 4px; }
+  .payment-account-icon { padding: 6px; gap: 4px; }
+  .payment-account-label strong { font-size: 12px; }
+  .payment-brand-logo.unionpay { width: 38px; }
+  .payment-brand-logo.unionpay img { height: 23px; margin-top: 3px; }
+}

@@ -1,0 +1,6 @@
+CREATE TABLE accounts(id varchar(64) PRIMARY KEY, username varchar(128) NOT NULL UNIQUE, password_hash varchar(128), role varchar(32) NOT NULL, organization_id varchar(64) NOT NULL, created_at timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE sessions(token_hash varchar(64) PRIMARY KEY, account_id varchar(64) NOT NULL REFERENCES accounts(id), expires_at timestamp with time zone NOT NULL);
+CREATE TABLE entities(id varchar(64) PRIMARY KEY, resource varchar(40) NOT NULL, owner_id varchar(64) NOT NULL REFERENCES accounts(id), organization_id varchar(64) NOT NULL, status varchar(40) NOT NULL, version integer NOT NULL DEFAULT 1, data text NOT NULL, created_at timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP, updated_at timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP);
+CREATE INDEX entities_resource_org ON entities(resource,organization_id,created_at);
+CREATE TABLE idempotency(account_id varchar(64) NOT NULL, request_key varchar(128) NOT NULL, payload_hash varchar(64) NOT NULL, response text, PRIMARY KEY(account_id,request_key));
+CREATE TABLE audit_events(id varchar(64) PRIMARY KEY, account_id varchar(64) NOT NULL, organization_id varchar(64) NOT NULL, entity_id varchar(64), action varchar(100) NOT NULL, detail text NOT NULL, created_at timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP);

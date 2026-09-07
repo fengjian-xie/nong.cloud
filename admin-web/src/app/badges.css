@@ -1,0 +1,40 @@
+/* Shared dimensions for compact status, identity, crop and activity labels. */
+:root {
+  --badge-height: 28px;
+  --badge-font-size: 12px;
+  --badge-line-height: 20px;
+  --badge-icon-size: 15px;
+}
+.app-shell :is(.status-chip, .identity-tags > span, .identity-filter-tag, .crop-chip, .finance-direction) {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  gap: 4px;
+  height: var(--badge-height);
+  min-height: var(--badge-height);
+  padding: 0 10px;
+  border: 0;
+  border-radius: 999px;
+  font-size: var(--badge-font-size);
+  font-weight: 600;
+  line-height: var(--badge-line-height);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.app-shell :is(.status-chip, .identity-filter-tag, .crop-chip, .finance-direction) > svg {
+  display: block;
+  flex: 0 0 var(--badge-icon-size);
+  width: var(--badge-icon-size);
+  height: var(--badge-icon-size);
+  margin: 0;
+}
+.app-shell :is(.status-chip, .identity-filter-tag, .crop-chip, .finance-direction) > span {
+  display: block;
+  line-height: var(--badge-line-height);
+}
+.app-shell :is(.identity-tags, .identity-certifications) {
+  align-items: center;
+  gap: 8px;
+}
