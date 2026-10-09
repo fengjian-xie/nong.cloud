@@ -1,0 +1,1 @@
+.help-tabs { display: flex; gap: 12rpx; margin: 26rpx 0; }.help-tabs button { flex: 1; padding: 16rpx 8rpx; border-bottom: 3rpx solid transparent; }.help-tabs .active { color: #0F3D2E; border-color: #0F3D2E; font-weight: 650; }.help-answer { padding: 12rpx 0 24rpx; }.help-step { padding: 16rpx 0; border-top: 1rpx solid #E6E9E3; }.help-context { margin: 20rpx 0; }

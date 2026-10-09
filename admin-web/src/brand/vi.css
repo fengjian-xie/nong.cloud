@@ -1,0 +1,269 @@
+/* Shared digital application of the supplied VI. Product UI stays scoped. */
+:root {
+  --vi-forest: #0F3D2E;
+  --vi-field: #3E9B5F;
+  --vi-gold: #E8B54A;
+  --vi-paper: #F4F2EA;
+  --vi-ink: #183D30;
+  --vi-muted: #536459;
+  --vi-line: #CDD4CB;
+  --vi-sans: 'PingFang SC', 'Source Han Sans SC', 'Noto Sans CJK SC', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+  --vi-serif: var(--vi-sans);
+  --green-900: var(--vi-forest);
+  --green-800: var(--vi-forest);
+  --green-700: var(--vi-forest);
+  --green-600: var(--vi-field);
+  --green-100: #E8EFE7;
+  --sage: var(--vi-field);
+  --amber: var(--vi-gold);
+  --text: var(--vi-ink);
+  --muted: var(--vi-muted);
+  --line: var(--vi-line);
+  --canvas: var(--vi-paper);
+  --radius: 8px;
+  --shadow: none;
+  font-family: var(--vi-sans);
+  color: var(--vi-ink);
+  background: var(--vi-paper);
+}
+body { background: var(--vi-paper); }
+:is(.xq-home, .cf-site, .work-login, .app-shell, .login-page) { font-family: var(--vi-sans); }
+:is(.xq-home, .cf-site, .work-login, .app-shell, .login-page, .api-site) :is(h1, h2) { font-family: var(--vi-sans); font-weight: 600; font-synthesis: none; }
+:is(.xq-home, .cf-site, .work-login, .app-shell, .login-page) :is(button, input, select, textarea) { font-family: var(--vi-sans); }
+:is(.xq-home, .cf-site, .work-login, .app-shell, .login-page) :is(a, button, input, select, textarea, summary, [tabindex]):focus-visible { outline: 3px solid var(--vi-field); outline-offset: 4px; }
+
+/* Official lockup: no enclosure, recolouring, effects or product-name swap. */
+:is(.xq-home, .cf-site, .work-login, .api-site) :is(.xq-brand, .cf-brand, .work-brand, .api-site-brand) { min-width: 0; text-decoration: none; }
+.api-site .api-site-brand > .vi-lockup { display: inline-flex; width: auto; height: auto; border: 0; border-radius: 0; background: none; }
+:is(.xq-home, .cf-site, .work-login, .api-site) .vi-site-context strong { font-family: var(--vi-sans); font-size: 14px; font-weight: 600; line-height: 1.5; }
+:is(.xq-home, .cf-site, .work-login, .api-site) .vi-site-context small { font-size: 11px; color: var(--vi-muted); }
+:is(.xq-home, .cf-site) .vi-reverse .vi-site-context small { color: #CBD7CE; }
+
+/* Company site: paper, editorial headings, open rows and flat forest bands. */
+.xq-home { --xq-forest: var(--vi-forest); --xq-accent: var(--vi-forest); --xq-muted: var(--vi-muted); --xq-line: var(--vi-line); background: var(--vi-paper); }
+.xq-home .xq-wrap { max-width: 1280px; width: calc(100% - 96px); }
+.xq-home .xq-header { background: var(--vi-paper); border-bottom-color: var(--vi-line); }
+.xq-home .xq-header-inner { min-height: 100px; height: auto; gap: 20px; }
+.xq-home .xq-nav { gap: 16px; font-size: 13px; }
+.xq-home .xq-nav a { min-height: 44px; }
+.xq-home .xq-outline-button { border-color: var(--vi-line); border-radius: 4px; padding: 0 12px; }
+.xq-home .xq-hero { padding-top: 60px; padding-bottom: 56px; gap: 56px; grid-template-columns: 1.08fr 1fr; }
+.xq-home .xq-hero h1 { font-size: clamp(36px, 4.5vw, 64px); line-height: 1.38; letter-spacing: -.03em; }
+.xq-home .xq-hero-copy > p { font-size: 16px; margin-top: 28px; line-height: 1.95; }
+.xq-home .xq-solid-button { background: var(--vi-gold); color: var(--vi-forest) !important; border-radius: 4px; min-height: 50px; }
+.xq-home .xq-solid-button:hover { background: var(--vi-forest); color: var(--vi-paper) !important; }
+.xq-home .xq-hero-photo img { height: clamp(350px, 33vw, 450px); border-radius: 4px; }
+.xq-home .xq-mission { background: var(--vi-forest); color: var(--vi-paper); padding: 42px 0; }
+.xq-home .xq-mission h2 { font-size: 30px; }
+.xq-home .xq-mission p { color: var(--vi-paper); border-color: #577469; font-size: 14px; }
+.xq-home .xq-section { padding-top: 80px; padding-bottom: 72px; }
+.xq-home .xq-section-heading h2 { font-size: clamp(30px, 3vw, 42px); line-height: 1.5; }
+.xq-home .xq-section-heading > p { margin-top: 14px; }
+.xq-home .xq-platform { padding-bottom: 0; }
+.xq-home .xq-platform-row { padding: 28px 0; gap: 24px; }
+.xq-home .xq-platform-name h3 { font-family: var(--vi-serif); font-weight: 700; }
+.xq-home .xq-platform-name > span { color: var(--vi-field); }
+.xq-home .xq-platform-copy p { color: var(--vi-muted); }
+.xq-home .xq-business-panel { padding: 28px 30px; background: #fff; border: 1px solid var(--vi-line); border-radius: 4px; }
+.xq-home .xq-fee-policy { padding: 26px 30px; background: #E8EFE7; border: 0; border-left: 3px solid var(--vi-field); }
+.xq-home .xq-card-section .xq-section-heading h2 { font-size: clamp(30px, 3.5vw, 48px); }
+.xq-home .xq-card-section .xq-section-heading > p { font-family: var(--vi-sans); font-size: 20px; }
+.xq-home .xq-card-layout { gap: 48px; grid-template-columns: 1.15fr 1fr; }
+.xq-home .xq-card-layout figure { padding: 12px; background: #fff; border-radius: 4px; }
+.xq-home .xq-numbered-list li > span, .xq-home .xq-card-steps li > span { background: #E8EFE7; color: var(--vi-forest); }
+.xq-home .xq-draft-notice { background: #E8EFE7; color: var(--vi-muted); border-radius: 4px; }
+.xq-home .xq-section-tabs button[aria-selected=true] { color: var(--vi-forest); border-bottom-color: var(--vi-field); }
+.xq-home .xq-member-table th { background: #E8EFE7; color: var(--vi-forest); }
+.xq-home .xq-member-table td { background: #fff; }
+.xq-home .xq-role-checks input { accent-color: var(--vi-forest); }
+.xq-home .xq-origin { background: #fff; padding: 72px 0; }
+.xq-home .xq-panorama img, .xq-home .xq-origin-gallery img { border-radius: 4px; }
+.xq-home .xq-company-image { display: none; }
+.xq-home .xq-company-columns { margin-top: 34px; gap: 48px; }
+.xq-home .xq-company-columns h3 { font-family: var(--vi-serif); font-weight: 700; line-height: 1.6; }
+.xq-home .xq-roadmap { background: #E8EFE7; padding: 64px 0; }
+.xq-home .xq-roadmap li > span { background: var(--vi-forest); border-color: #E8EFE7; }
+.xq-home .xq-cta { background: var(--vi-forest); color: var(--vi-paper); }
+.xq-home .xq-cta p { color: #CBD7CE; }
+.xq-home .xq-cta .xq-actions a:hover { color: var(--vi-gold); }
+.xq-home .xq-footer { max-width: none; width: 100%; background: var(--vi-forest); color: var(--vi-paper); padding: 30px 0 24px; border-top: 1px solid #577469; }
+.xq-home .xq-footer nav a:hover { color: var(--vi-gold); }
+.xq-home .xq-footer .xq-wrap > p { border-top: 1px solid #577469; margin-top: 22px; padding-top: 18px; color: #CBD7CE; font-size: 12px; }
+
+/* Farm: real image material stays untinted; rows retain search/filter context. */
+.cf-site { --cf-green: var(--vi-forest); --cf-forest: var(--vi-forest); --cf-muted: var(--vi-muted); --cf-line: var(--vi-line); background: var(--vi-paper); }
+.cf-site .cf-wrap { max-width: 1280px; width: calc(100% - 96px); }
+.cf-site .cf-header { background: var(--vi-paper); border-bottom-color: var(--vi-line); }
+.cf-site .cf-header > .cf-wrap { min-height: 100px; }
+.cf-site .cf-main { padding-top: 40px; }
+.cf-site .cf-explore-heading h1 { font-size: clamp(29px, 3.1vw, 44px); white-space: normal; }
+.cf-site .cf-title-phrase { white-space: nowrap; }
+.cf-site .cf-notice, .cf-site .cf-camera-note, .cf-site .cf-camera-empty { background: #E8EFE7; color: var(--vi-muted); }
+.cf-site .cf-search { background: #fff; }
+.cf-site .cf-filters { padding: 18px; border: 1px solid var(--vi-line); border-radius: 4px; background: #fff; }
+.cf-site .cf-plot-list { border: 0; display: grid; gap: 16px; }
+.cf-site .cf-plot-row { background: #fff; border: 1px solid var(--vi-line); padding: 18px; border-radius: 4px; gap: 26px; }
+.cf-site .cf-plot-copy h3 { font-size: 23px; }
+.cf-site .cf-button { border-radius: 4px; }
+.cf-site .cf-header nav a.active::after { background: var(--vi-field); }
+.cf-site .cf-footer { background: var(--vi-forest); color: var(--vi-paper); padding: 24px 0; }
+.cf-site .cf-footer p { color: #CBD7CE; }
+
+/* User entry: airy photo / form split. Functional text uses sans, not serif. */
+.work-login { --work-green: var(--vi-forest); --work-line: var(--vi-line); background: var(--vi-paper); }
+.work-login .work-header { max-width: 1280px; margin: 0 auto; min-height: 100px; padding: 16px 0; }
+.work-login .work-header nav { font-family: var(--vi-sans); font-size: 15px; gap: 32px; }
+.work-login .work-entry { max-width: 1280px; margin-left: auto; margin-right: auto; padding: 52px 0 44px; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 60px; }
+.work-login .work-intro { border-right: 0; padding: 4px 0 0; }
+.work-login .work-intro h1 { font-size: clamp(38px, 4.2vw, 60px); line-height: 1.35; letter-spacing: -.03em; }
+.work-login .work-intro > p { font-size: 19px; margin-bottom: 26px; color: var(--vi-muted); }
+.work-login .work-intro img { height: 360px; border-radius: 4px; }
+.work-login .work-form-region { padding: 34px; background: #fff; border: 1px solid var(--vi-line); border-radius: 6px; align-self: start; }
+.work-login .work-form-region h2 { font-size: 32px; }
+.work-login .work-subtitle { font-size: 16px; margin-bottom: 28px; color: var(--vi-muted); }
+.work-login .work-role-field { font-size: 15px; }
+.work-login .work-role-field select { height: 50px; font-size: 17px; padding: 0 12px; border-color: var(--vi-line); }
+.work-login .work-role-summary { padding: 18px; min-height: auto; background: var(--vi-paper); }
+.work-login .work-role-summary h3 { font-size: 16px; }
+.work-login .work-role-summary p { font-size: 14px; line-height: 1.8; color: var(--vi-muted); }
+.work-login .work-consent { margin: 24px 0; font-size: 14px; line-height: 1.7; gap: 12px; }
+.work-login .work-consent input { width: 22px; height: 22px; flex-basis: 22px; border-color: var(--vi-line); }
+.work-login .work-consent input:checked { background: var(--vi-forest); border-color: var(--vi-forest); }
+.work-login .work-enter, .work-login .work-formal { min-height: 50px; font-size: 16px !important; }
+.work-login .work-enter { background: var(--vi-gold); border-color: var(--vi-gold); color: var(--vi-forest); font-weight: 600; }
+.work-login .work-enter:hover { background: var(--vi-forest); border-color: var(--vi-forest); color: var(--vi-paper); }
+.work-login .work-formal { margin-top: 12px; background: var(--vi-paper); }
+.work-login .work-footer { max-width: 1280px; margin-left: auto; margin-right: auto; font-size: 13px; color: var(--vi-muted); }
+
+/* Daily-use admin + multi-identity workspaces keep the existing data model. */
+.app-shell .sidebar { background: var(--vi-forest); color: var(--vi-paper); }
+.app-shell .brand { height: auto; min-height: 100px; padding: 14px 10px 8px; position: relative; }
+.app-shell .brand .vi-lockup, .app-shell .brand .vi-site-context { display: flex; margin: 0; letter-spacing: normal; }
+.app-shell .brand .vi-lockup-image { width: 216px; height: auto; }
+.app-shell .brand .vi-site-context strong { font-family: var(--vi-sans); font-size: 12px; line-height: 1.6; color: var(--vi-paper); }
+.app-shell .brand .sidebar-close { position: absolute; top: 12px; right: 8px; }
+.vi-sidebar-compact { display: none; }
+.sidebar-compact .vi-sidebar-full { display: none; }
+.sidebar-compact .vi-sidebar-compact { display: block; }
+.app-shell.sidebar-compact .brand { padding: 14px 10px; }
+.app-shell .side-nav a.active { box-shadow: inset 3px 0 0 var(--vi-gold); }
+.app-shell .farm-nav-label { color: #CBD7CE; font-size: 11px; letter-spacing: .08em; }
+.app-shell .topbar { min-height: 72px; background: var(--vi-paper); backdrop-filter: none; }
+.app-shell .content { padding: 28px 32px; }
+.app-shell .page-heading h1 { font-size: 28px; }
+.app-shell :is(.panel, .farm-panel) { border-radius: 6px; box-shadow: none; }
+.app-shell .panel-head h2 { font-family: var(--vi-sans); font-size: 16px; }
+.app-shell .data-table th { background: #E8EFE7; color: var(--vi-muted); }
+.app-shell .farm-overview, .app-shell .portal-device-face { background: var(--vi-forest); color: var(--vi-paper); }
+.app-shell .service-profile-head, .app-shell .video-preview { background: var(--vi-forest); }
+.app-shell .media-preview:not(.video-preview) { background: var(--vi-field); }
+.app-shell .plot-map-preview { background: var(--vi-paper); }
+.app-shell .portal-hero { background: #E8EFE7; border-color: var(--vi-line); padding: 30px; border-radius: 6px; }
+.app-shell .portal-hero h1 { color: var(--vi-forest); font-size: 32px; }
+.app-shell .portal-hero p { color: var(--vi-muted); }
+.app-shell .portal-hero-link { background: var(--vi-forest); }
+.app-shell .portal-scope { background: var(--vi-paper); border-color: var(--vi-line); color: var(--vi-muted); }
+.app-shell .portal-switch select { background: #fff; border-color: var(--vi-line); color: var(--vi-forest); min-height: 44px; }
+.app-shell .portal-identity { color: var(--vi-paper); }
+.login-page .login-context { background: var(--vi-forest); color: var(--vi-paper); }
+.login-page .login-context::after { display: none; }
+.login-page .login-brand > .vi-lockup { display: inline-flex; width: auto; height: auto; border: 0; border-radius: 0; }
+.login-page .login-brand .vi-lockup-image { width: 280px; }
+.login-page .login-brand .vi-site-context { width: auto; height: auto; border: 0; }
+.login-page .login-brand .vi-site-context strong { font-family: var(--vi-sans); font-size: 14px; }
+.login-page .login-brand .vi-site-context small { color: #CBD7CE; }
+.login-page .login-panel { background: var(--vi-paper); }
+.login-page .primary-button { background: var(--vi-gold); color: var(--vi-forest); }
+.login-page .login-facts svg { color: var(--vi-gold); }
+
+/* API: flat brand banner, same technical tables, code and local sandbox. */
+.api-site .api-site-header { background: var(--vi-paper); border-bottom-color: var(--vi-line); }
+.api-site .api-site-header-inner { min-height: 100px; }
+.api-site .api-site-header-links { font-size: 12px; color: var(--vi-muted); }
+.api-page .api-tabs button { min-height: 48px; font-size: 14px; }
+.api-page .api-tabs button.active { color: var(--vi-forest); border-bottom-color: var(--vi-field); }
+.api-page .api-hero { background: var(--vi-forest); border-radius: 6px; padding: 38px; gap: 38px; color: var(--vi-paper); }
+.api-page .api-hero h2 { font-size: 36px; line-height: 1.45; }
+.api-page .api-hero p { color: #CBD7CE; font-size: 14px; }
+.api-page .api-hero-button { background: var(--vi-gold); border-color: var(--vi-gold); color: var(--vi-forest); font-weight: 600; min-height: 44px; }
+.api-page .api-bridge { border-color: #577469; background: transparent; }
+.api-page .api-bridge > div:first-child { border-color: #577469; }
+.api-page .api-bridge p { font-size: 12px; }
+.api-page .api-categories strong { font-size: 14px; color: var(--vi-forest); }
+.api-page .api-params th { background: #E8EFE7; color: var(--vi-muted); }
+.api-page .api-code { background: var(--vi-forest); }
+.api-site .api-site-footer { color: var(--vi-muted); font-size: 12px; }
+
+@media (max-width: 1280px) {
+  .xq-home .xq-header-inner { min-height: 94px; }
+  .xq-home .xq-menu-toggle { display: grid; }
+  .xq-home .xq-nav { display: none; top: 94px; }
+  .xq-home .xq-nav-open { display: flex; flex-direction: column; align-items: stretch; position: absolute; left: 0; right: 0; padding: 18px 32px; background: var(--vi-paper); border-bottom: 1px solid var(--vi-line); }
+  .work-login .work-header, .work-login .work-entry, .work-login .work-footer { margin-left: 32px; margin-right: 32px; }
+}
+@media (max-width: 1024px) {
+  .xq-home .xq-wrap, .cf-site .cf-wrap { width: calc(100% - 64px); }
+  .xq-home .xq-hero { gap: 32px; }
+  .xq-home .xq-hero h1 { font-size: 4.3vw; }
+  .xq-home .xq-mission .xq-wrap { display: block; }
+  .xq-home .xq-mission p { margin-top: 12px; padding-left: 0; border: 0; }
+  .work-login .work-entry { gap: 32px; }
+  .work-login .work-form-region { padding: 24px; }
+  .app-shell .content { padding: 24px; }
+}
+@media (max-width: 760px) {
+  :is(.xq-home, .cf-site, .work-login, .api-site) .vi-lockup { flex-direction: column; align-items: flex-start; gap: 0; }
+  :is(.xq-home, .cf-site, .work-login, .api-site) .vi-lockup .vi-site-context { flex-direction: row; align-items: baseline; padding: 0 0 4px 14px; border: 0; gap: 8px; }
+  :is(.xq-home, .cf-site, .work-login, .api-site) .vi-site-context strong { font-size: 12px; }
+  .xq-home .xq-wrap, .cf-site .cf-wrap { width: calc(100% - 40px); }
+  .xq-home .xq-header-inner { min-height: 94px; }
+  .xq-home .xq-nav { top: 94px; }
+  .xq-home .xq-menu-toggle { min-width: 44px; min-height: 44px; padding: 8px; border: 1px solid var(--vi-line); border-radius: 4px; }
+  .xq-home .xq-hero { grid-template-columns: 1fr; gap: 28px; padding-top: 34px; padding-bottom: 34px; }
+  .xq-home .xq-hero h1 { font-size: clamp(29px, 7.6vw, 42px); white-space: normal; }
+  .xq-home .xq-hero-copy > p { font-size: 14px; margin-top: 20px; }
+  .xq-home .xq-hero-photo img { height: 260px; }
+  .xq-home .xq-section { padding-top: 48px; padding-bottom: 48px; }
+  .xq-home .xq-section-heading h2, .xq-home .xq-card-section .xq-section-heading h2 { font-size: 28px; }
+  .xq-home .xq-mission h2 { font-size: 24px; white-space: normal; }
+  .xq-home .xq-card-section .xq-section-heading > p { font-size: 17px; }
+  .xq-home .xq-card-title-line { display: block; }
+  .xq-home .xq-business-panel { padding: 20px; }
+  .xq-home .xq-fee-policy { padding: 20px; }
+  .xq-home .xq-card-layout { grid-template-columns: 1fr; gap: 26px; }
+  .xq-home .xq-company-columns { grid-template-columns: 1fr; gap: 30px; }
+  .xq-home .xq-company-columns > div + div { border-left: 0; padding-left: 0; }
+  .xq-home .xq-footer-top { flex-wrap: wrap; gap: 20px; }
+  .xq-home .xq-footer nav { margin-left: 0; flex-wrap: wrap; gap: 16px; }
+  .cf-site .cf-header > .cf-wrap { min-height: 144px; padding: 12px 0 0; }
+  .cf-site .cf-main { padding-top: 28px; }
+  .cf-site .cf-explore-heading h1 { font-size: clamp(28px, 8vw, 32px); }
+  .cf-site .cf-plot-row { grid-template-columns: 1fr; padding: 16px; gap: 16px; }
+  .cf-site .cf-filters { padding: 12px; gap: 10px; }
+  .cf-site .cf-footer p { font-size: 12px; }
+  .work-login .work-header { margin: 0 20px; flex-wrap: wrap; padding: 12px 0 18px; gap: 16px; }
+  .work-login .work-header nav { font-size: 14px; gap: 24px; }
+  .work-login .work-entry { display: block; margin: 0 20px; padding: 30px 0; }
+  .work-login .work-intro { padding-bottom: 28px; }
+  .work-login .work-intro h1 { font-size: 38px; }
+  .work-login .work-intro > p { font-size: 17px; }
+  .work-login .work-intro img { height: auto; aspect-ratio: 1.5; }
+  .work-login .work-form-region { padding: 24px 20px; }
+  .work-login .work-form-region h2 { font-size: 28px; }
+  .work-login .work-footer { margin: 0 20px; }
+  .app-shell .content { padding: 20px 16px; }
+  .app-shell .topbar { padding-left: 16px; padding-right: 16px; }
+  .app-shell .portal-hero { padding: 22px; }
+  .app-shell .portal-hero h1 { font-size: 26px; }
+  .api-site .api-site-header-inner { flex-wrap: wrap; gap: 8px; padding: 10px 0 16px; }
+  .api-site .api-site-header-links { margin-left: 14px; }
+  .api-page .api-hero { padding: 24px; gap: 24px; }
+  .api-page .api-hero h2 { font-size: 29px; }
+  .login-page .login-brand .vi-lockup-image { width: 240px; }
+}
+@media (max-width: 360px) {
+  .work-login .work-intro h1 { font-size: 32px; }
+  .cf-site .cf-header nav { gap: 24px; }
+  .app-shell .topbar .portal-header-entry { display: none; }
+  .app-shell .topbar .portal-switch select { max-width: 104px; }
+}

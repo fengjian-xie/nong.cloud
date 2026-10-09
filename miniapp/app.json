@@ -1,34 +1,64 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/plot/plot",
-    "pages/service/service",
-    "pages/order/order",
-    "pages/record/record",
+    "pages/workspace/workspace",
+    "pages/farm/farm",
     "pages/message/message",
     "pages/me/me",
-    "pages/map/map",
-    "pages/supply/supply"
+    "pages/login/login",
+    "pages/cards/cards",
+    "pages/module/module",
+    "pages/help/help",
+    "pages/value/value",
+    "pages/connected/connected"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#087944",
-    "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "福安农事服务",
-    "backgroundColor": "#f4f7f5",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "乡桥",
+    "backgroundColor": "#F4F2EA",
     "backgroundTextStyle": "dark"
   },
   "tabBar": {
-    "color": "#6b756f",
-    "selectedColor": "#087944",
+    "color": "#747B75",
+    "selectedColor": "#0F3D2E",
     "backgroundColor": "#ffffff",
-    "borderStyle": "black",
+    "borderStyle": "white",
     "list": [
-      { "pagePath": "pages/index/index", "text": "首页" },
-      { "pagePath": "pages/plot/plot", "text": "地块" },
-      { "pagePath": "pages/service/service", "text": "服务" },
-      { "pagePath": "pages/record/record", "text": "记录" },
-      { "pagePath": "pages/me/me", "text": "我的" }
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/tab-home.png",
+        "selectedIconPath": "assets/tab-home-active.png"
+      },
+      {
+        "pagePath": "pages/workspace/workspace",
+        "text": "工作台",
+        "iconPath": "assets/tab-work.png",
+        "selectedIconPath": "assets/tab-work-active.png"
+      },
+      {
+        "pagePath": "pages/farm/farm",
+        "text": "农场",
+        "iconPath": "assets/tab-farm.png",
+        "selectedIconPath": "assets/tab-farm-active.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "assets/tab-message.png",
+        "selectedIconPath": "assets/tab-message-active.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "assets/tab-me.png",
+        "selectedIconPath": "assets/tab-me-active.png"
+      }
     ]
+  },
+  "usingComponents": {
+    "identity-switcher": "/components/identity-switcher/index"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

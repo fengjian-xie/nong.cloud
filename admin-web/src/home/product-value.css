@@ -1,0 +1,10 @@
+.xq-product-value > .xq-section-heading > span { color: var(--vi-field); font-size: 12px; letter-spacing: .12em; }
+.xq-product-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 35px; }
+.xq-product-grid article { padding: 25px; border: 1px solid var(--vi-line); background: #fff; border-radius: 5px; }
+.xq-product-grid article > svg { color: var(--vi-field); }
+.xq-product-grid h3 { font-size: 19px; margin: 20px 0 12px; color: var(--vi-forest); }
+.xq-product-grid p { font-size: 14px; line-height: 1.9; color: var(--vi-muted); }
+.xq-product-links { display: flex; gap: 25px; flex-wrap: wrap; margin: 26px 0; }
+.xq-product-links a { display: inline-flex; gap: 10px; align-items: center; color: var(--vi-forest); }
+@media (max-width: 900px) { .xq-product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 580px) { .xq-product-grid { grid-template-columns: 1fr; } }

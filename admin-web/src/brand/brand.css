@@ -1,0 +1,19 @@
+/* Source: 乡桥农业 VI V1.0, pp. 6–10. No font binaries are distributed. */
+.vi-lockup { display: inline-flex; align-items: center; gap: 18px; flex-shrink: 0; color: #0F3D2E; }
+.vi-lockup .vi-lockup-image { display: block; width: 218px; height: auto; max-width: none; flex: 0 0 auto; object-fit: contain; }
+.vi-lockup .vi-site-context { display: flex; flex-direction: column; gap: 5px; padding-left: 18px; border-left: 1px solid #CDD4CB; margin: 0; color: inherit; letter-spacing: normal; }
+.vi-lockup .vi-site-context strong { font-family: var(--vi-sans, 'PingFang SC', sans-serif); font-size: 14px; font-weight: 600; line-height: 1.5; letter-spacing: .04em; white-space: nowrap; }
+.vi-lockup .vi-site-context small { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; line-height: 1.5; letter-spacing: .03em; color: #536459; }
+.vi-lockup.vi-reverse { color: #F4F2EA; }
+.vi-lockup.vi-reverse .vi-site-context { border-color: #577469; }
+.vi-lockup.vi-reverse .vi-site-context small { color: #CBD7CE; }
+.vi-lockup.vi-stacked { flex-direction: column; align-items: flex-start; gap: 0; }
+.vi-lockup.vi-stacked .vi-site-context { padding: 0 0 8px 14px; border: 0; }
+.vi-mark { display: block; flex: 0 0 auto; }
+@media (max-width: 760px) {
+  .vi-lockup { gap: 8px; }
+  .vi-lockup .vi-lockup-image { width: 198px; }
+  .vi-lockup .vi-site-context { padding-left: 10px; gap: 2px; }
+  .vi-lockup .vi-site-context strong { font-size: 12px; }
+  .vi-lockup .vi-site-context small { font-size: 10px; }
+}

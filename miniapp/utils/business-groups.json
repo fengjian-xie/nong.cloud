@@ -1,0 +1,32 @@
+[
+  {"id":"tasks","title":"工作待办","entries":[{"title":"协同与缺项提醒","members":["value-collaboration"]}]},
+  {"id":"production","title":"生产与记录","entries":[
+    {"title":"地块与产季","members":["plots"]},
+    {"title":"农事记录","members":["records"]},
+    {"title":"我的农事卡","members":["cards"]},
+    {"title":"肥力与建议","members":["soil"]},
+    {"title":"产季记录","members":["value-stories","stories"]},
+    {"title":"成本与经营","members":["value-income","costs","value-history"]}
+  ]},
+  {"id":"services","title":"农事服务","entries":[
+    {"title":"委托与服务履约","members":["services"]},
+    {"title":"队伍与服务资源","members":["assets"]},
+    {"title":"植保作业档案","members":["protection"]},
+    {"title":"识卡与农资凭据","members":["nfc","receipts"]},
+    {"title":"检测委托与报告","members":["samples","reports"]},
+    {"title":"冷库运行","members":["operations"]}
+  ]},
+  {"id":"trade","title":"产品与交易","entries":[
+    {"title":"成熟与供货","members":["sales","maturity","value-calendar"]},
+    {"title":"产品批次履历","members":["value-passport"]},
+    {"title":"库存与分级货源","members":["stock","value-grades"]},
+    {"title":"采购与补货需求","members":["demands"]},
+    {"title":"加工分拣","members":["processing"]},
+    {"title":"采购信息权益","members":["membership"]}
+  ]},
+  {"id":"subjects","title":"主体与授权","entries":[
+    {"title":"社员与调度","members":["members"]},
+    {"title":"家庭代办授权","members":["authorization"]}
+  ]},
+  {"id":"customer","title":"帮助与反馈","entries":[{"title":"履约反馈与帮助","members":["value-feedback"]}]}
+]

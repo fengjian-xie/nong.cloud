@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>乡桥小程序交互原型</title>
+  <link rel="stylesheet" href="preview/shell.css">
+  <link rel="stylesheet" href="preview/choice-menu.css">
+</head>
+<body>
+  <aside class="catalog">
+    <div class="catalog-brand">乡桥 · 小程序原型</div>
+    <p>连接乡土，共享丰收</p>
+    <div class="preview-note">浏览器预览原生页面源码，非微信真机。默认数据为本地演示；登录页可选择本地数据库联调。分账仅在管理后台，不在小程序。</div>
+    <h2>公共页面</h2><div id="public-links"></div>
+    <h2>角色工作台</h2><div id="role-links"></div>
+    <h2>当前角色页面</h2><div id="module-links"></div>
+    <p class="caption">演示角色用于UI验收，不代表权限。数据库模式仅显示服务端批准的身份；微信真机、硬件、合同、摄像头、付款待接入。</p>
+  </aside>
+  <main class="stage">
+    <div class="preview-toolbar">
+      <label for="role-preview">角色页面预览</label>
+      <div id="role-preview-menu" class="xq-choice">
+        <button id="role-preview" class="xq-choice-trigger" type="button" role="combobox" aria-label="角色页面预览" aria-haspopup="listbox" aria-expanded="false" aria-controls="role-preview-options">选择其他角色页面</button>
+        <div id="role-preview-options" class="xq-choice-panel" role="listbox" aria-label="角色页面预览" hidden></div>
+      </div>
+      <span>仅切换演示账号，不是角色授权</span>
+    </div>
+    <div class="phone">
+      <div class="statusbar"><span>9:41</span><span>▮▮▮　◒　▰</span></div>
+      <header class="native-nav"><button id="back" aria-label="返回上一页">‹</button><span id="page-title">乡桥</span><span class="capsule">•••　◉</span></header>
+      <div id="screen"></div><nav id="tabs"></nav>
+    </div>
+    <p class="stage-caption">可点击、可编辑 · WXML / WXSS / JS原型</p>
+  </main>
+  <div id="dialog-layer"></div><div id="toast" role="status"></div>
+  <script>
+    // File entry has an opaque/null origin and no HTTP source-bundle/proxy.
+    if (location.protocol === 'file:') {
+      const notice = document.createElement('p'), link = document.createElement('a');
+      notice.setAttribute('role', 'alert');
+      notice.textContent = '文件预览不能联调数据库，请启动本地 HTTP 预览服务。';
+      link.href = 'http://127.0.0.1:4201/'; link.textContent = '打开本地数据库联调预览';
+      document.getElementById('screen').replaceChildren(notice, link);
+    }
+  </script>
+  <script src="preview/choice-menu.js"></script>
+  <script src="preview/runtime.js"></script>
+</body>
+</html>

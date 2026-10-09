@@ -1,16 +1,19 @@
+import { lazy, Suspense } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { useAuth } from '../auth/AuthContext'
 import { AppShell } from '../components/AppShell'
-import { DashboardPage } from '../pages/DashboardPage'
 import { LoginPage } from '../pages/LoginPage'
-import { MemberDetailPage } from '../pages/MemberDetailPage'
-import { MembersPage } from '../pages/MembersPage'
-import { OperationsPage } from '../pages/OperationsPage'
-import { PlotDetailPage } from '../pages/PlotDetailPage'
-import { PlotsPage } from '../pages/PlotsPage'
-import { SystemSettingsPage } from '../pages/SystemSettingsPage'
-import { ServiceDetailPage } from '../pages/ServiceDetailPage'
-import { TaskDetailPage } from '../pages/TaskDetailPage'
+import { AdminCenterPage, AdminOverview, LegacyAdminRedirect, MemberDetailPage, PlotDetailPage, ServiceDetailPage, TaskDetailPage } from './AdminCenters'
+
+const PortalHub = lazy(() => import('../portals/PortalApp').then(m => ({ default: m.PortalHub })))
+const PortalApp = lazy(() => import('../portals/PortalApp'))
+
+function ProtectedWorkspace() {
+  const { session, restoring } = useAuth()
+  if (restoring) return <div className="app-boot">正在恢复会话…</div>
+  if (!session) return <Navigate to="/login" replace />
+  return <Suspense fallback={<div className="app-boot">正在加载角色工作台…</div>}><PortalApp/></Suspense>
+}
 
 function ProtectedApp() {
   const { session, restoring } = useAuth()
@@ -19,21 +22,16 @@ function ProtectedApp() {
 
   return (
     <AppShell>
-      <Routes>
-        <Route path="/" element={<DashboardPage />} />
-        <Route path="/members" element={<MembersPage />} />
-        <Route path="/members/:memberId" element={<MemberDetailPage />} />
-        <Route path="/tasks/:taskId" element={<TaskDetailPage />} />
-        <Route path="/plots" element={<PlotsPage />} />
-        <Route path="/plots/:plotId" element={<PlotDetailPage />} />
-        <Route path="/services" element={<OperationsPage module="services" />} />
-        <Route path="/services/:serviceId" element={<ServiceDetailPage />} />
-        <Route path="/supply" element={<OperationsPage module="supply" />} />
-        <Route path="/config" element={<OperationsPage module="config" />} />
-        <Route path="/settings" element={<SystemSettingsPage />} />
-        <Route path="/audit" element={<OperationsPage module="audit" />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+      <Suspense fallback={<div className="app-boot">正在加载乡桥农事模块…</div>}><Routes>
+        <Route path="/" element={<AdminOverview />} />
+        <Route path="/manage/:centerId/:section?" element={<AdminCenterPage />} />
+        <Route path="/manage/subjects/members/:memberId" element={<MemberDetailPage />} />
+        <Route path="/manage/production/plots/:plotId" element={<PlotDetailPage />} />
+        <Route path="/manage/services/orders/:serviceId" element={<ServiceDetailPage />} />
+        <Route path="/manage/overview/tasks/:taskId" element={<TaskDetailPage />} />
+        <Route path="/workspaces" element={<PortalHub />} />
+        <Route path="*" element={<LegacyAdminRedirect />} />
+      </Routes></Suspense>
     </AppShell>
   )
 }
@@ -43,6 +41,7 @@ export function App() {
   return (
     <Routes>
       <Route path="/login" element={session ? <Navigate to="/" replace /> : <LoginPage />} />
+      <Route path="/workspace/:role/*" element={<ProtectedWorkspace/>} />
       <Route path="/*" element={<ProtectedApp />} />
     </Routes>
   )

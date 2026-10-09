@@ -1,0 +1,3 @@
+.app-load-error{box-sizing:border-box;max-width:640px;margin:48px auto;padding:24px;color:#0f3d2e;font-family:"PingFang SC",-apple-system,BlinkMacSystemFont,sans-serif;overflow-wrap:anywhere}
+.app-load-error h1{font-size:24px;line-height:1.5}.app-load-error p{font-size:15px;line-height:1.8}
+.app-load-error button{max-width:100%;border:1px solid #0f3d2e;border-radius:10px;padding:12px 20px;background:#0f3d2e;color:white;font:inherit;cursor:pointer}.app-load-error button:focus-visible{outline:3px solid #3e9b5f;outline-offset:3px}

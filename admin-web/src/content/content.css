@@ -1,0 +1,11 @@
+.xq-content-dialog { width: min(780px, calc(100vw - 32px)); max-height: calc(100vh - 48px); max-height: calc(100dvh - 48px); margin: auto; padding: 0; color: var(--vi-ink, #183d30); border: 1px solid var(--vi-line, #cdd4cb); border-radius: 8px; background: #fff; }
+.xq-content-dialog::backdrop { background: rgb(10 30 22 / 50%); }
+.xq-content-dialog > header { position: sticky; top: 0; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 24px; background: #fff; border-bottom: 1px solid var(--vi-line, #cdd4cb); }
+.xq-content-dialog h2 { margin: 0; font-size: 22px; line-height: 1.5; }
+.xq-content-dialog .icon-button { flex: 0 0 36px; color: #183d30; border: 1px solid #cdd4cb; border-radius: 5px; background: #f4f2ea; display: grid; place-items: center; width: 36px; height: 36px; }
+.xq-content-dialog-body { padding: 24px; line-height: 1.85; }
+.xq-content-dialog-body p { margin: 0 0 18px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.xq-content-dialog-body .news-meta { color: #536459; font-size: 12px; margin-bottom: 20px; }
+.xq-content-dialog-body .news-summary { padding: 16px; background: #e8efe7; border-left: 3px solid #3e9b5f; }
+.xq-content-dialog-body .sys-dialog-feedback { padding: 12px 14px; border-left: 3px solid #e8b54a; background: #fff4d9; color: #6a501b; font-size: 13px; }
+@media (max-width: 600px) { .xq-content-dialog > header, .xq-content-dialog-body { padding: 16px; } .xq-content-dialog h2 { font-size: 19px; } }

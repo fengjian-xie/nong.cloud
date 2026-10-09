@@ -1,0 +1,19 @@
+# Optional reproducible alternative to an installed PostgreSQL. Local only.
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${XQ_LOCAL_DB_PASSWORD:?Set a local-only database password}
+      POSTGRES_DB: xiangqiao_local
+    ports:
+      - "127.0.0.1:55439:5432"
+    volumes:
+      - xq_local_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d xiangqiao_local"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+volumes:
+  xq_local_pg:

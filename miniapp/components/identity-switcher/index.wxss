@@ -1,0 +1,5 @@
+.identity-band { display: flex; gap: 20rpx; align-items: center; text-align: left; padding: 22rpx 26rpx; margin: 24rpx 0; width: 100%; background: #ffffff; border-radius: 18rpx; }
+.identity-label { font-weight: 650; font-size: 32rpx; color: #0F3D2E; }.identity-count { margin-left: auto; font-size: 23rpx; }
+.sheet-mask { position: fixed; inset: 0; z-index: 99; background: rgba(15,30,20,.40); display: flex; align-items: flex-end; }
+.identity-sheet { width: 100%; max-height: 80vh; overflow-y: auto; padding: 36rpx 32rpx calc(40rpx + env(safe-area-inset-bottom)); background: #ffffff; border-radius: 28rpx 28rpx 0 0; }
+.sheet-heading { display: flex; justify-content: space-between; align-items: center; }.close-sheet { padding: 12rpx 20rpx; color: #0F3D2E; border: 1rpx solid #D7DED6; border-radius: 30rpx; }.identity-option { margin-top: 20rpx; padding: 20rpx 24rpx; border: 1rpx solid #E6E9E3; border-radius: 14rpx; }.identity-current { border-color: #3E9B5F; background: #EEF5ED; }

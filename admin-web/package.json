@@ -8,7 +8,7 @@
     "build": "tsc --noEmit -p tsconfig.app.json && vite build",
     "preview": "vite preview --host 127.0.0.1",
     "lint": "eslint . --max-warnings 0",
-    "test": "vitest run"
+    "test": "vitest run --maxWorkers=2"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",

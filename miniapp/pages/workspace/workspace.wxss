@@ -1,0 +1,2 @@
+.card-entry { background: #0F3D2E; color: #ffffff; padding: 26rpx 32rpx; border-radius: 18rpx; width: 100%; text-align: left; }
+.entry-heading { display: flex; align-items: center; gap: 26rpx; font-size: 36rpx; font-weight: 650; margin-bottom: 8rpx; }.white-chevron { border-color: #ffffff; }

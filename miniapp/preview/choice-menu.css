@@ -1,0 +1,16 @@
+/* The plots-page filter, PC identity switcher and miniapp preview share these primitives. */
+.xq-choice { position: relative; min-width: 142px; }
+.xq-choice-trigger, .multi-filter-trigger { position: relative; display: flex; align-items: center; min-width: 142px; height: 38px; padding: 0 30px 0 11px; border: 1px solid var(--line, #CDD4CB); border-radius: 7px; background: #fbfcfb; color: #354139; font: inherit; font-size: 13px; text-align: left; cursor: pointer; }
+.xq-choice-trigger { width: 100%; min-width: 0; }
+.xq-choice-trigger::after, .multi-filter-trigger::after { content: ''; position: absolute; right: 12px; top: 14px; width: 6px; height: 6px; border-right: 1.5px solid var(--muted, #536459); border-bottom: 1.5px solid var(--muted, #536459); transform: rotate(45deg); transition: transform .15s ease; }
+.xq-choice.open .xq-choice-trigger, .xq-choice-trigger:focus-visible, .multi-filter.open .multi-filter-trigger { border-color: var(--green-600, #3E9B5F); box-shadow: 0 0 0 3px rgb(11 138 76 / 10%); outline: none; }
+.xq-choice.open .xq-choice-trigger::after, .multi-filter.open .multi-filter-trigger::after { top: 17px; transform: rotate(225deg); }
+.xq-choice-panel, .multi-filter-panel { position: absolute; z-index: 12; top: calc(100% + 7px); left: 0; width: 190px; padding: 9px; border: 1px solid var(--line, #CDD4CB); border-radius: 9px; background: white; box-shadow: 0 12px 30px rgb(20 55 38 / 15%); }
+.xq-choice-panel { z-index: 60; left: auto; right: 0; width: max(100%, 190px); max-width: calc(100vw - 32px); max-height: min(420px, 65dvh); overflow-y: auto; overscroll-behavior: contain; }
+.xq-choice-panel[hidden] { display: none; }
+.xq-choice-option { display: flex; align-items: center; gap: 8px; width: 100%; min-height: 38px; margin: 0; padding: 6px 7px; border: 0; border-radius: 6px; background: transparent; color: var(--text, #183D30); font: inherit; font-size: 13px; line-height: 1.4; text-align: left; cursor: pointer; }
+.xq-choice-option::before { content: ''; flex: 0 0 14px; height: 14px; border: 1px solid #b1bdb5; border-radius: 50%; background: white; }
+.xq-choice-option[aria-selected=true]::before { border-color: #3e9b5f; background: #3e9b5f; box-shadow: inset 0 0 0 3px white; }
+.xq-choice-option[aria-selected=true], .xq-choice-option:hover, .xq-choice-option.is-active { background: #f4f8f5; }
+.xq-choice-option.is-active { outline: 1px solid #d7e5dc; outline-offset: -1px; }
+@media (prefers-reduced-motion: reduce) { .xq-choice-trigger::after, .multi-filter-trigger::after { transition: none; } }

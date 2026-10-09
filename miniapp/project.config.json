@@ -1,6 +1,6 @@
 {
   "appid": "wx8e467f0ee6022a34",
-  "projectname": "fuan-miniapp",
+  "projectname": "xiangqiao-miniapp-ui-v1",
   "compileType": "miniprogram",
   "libVersion": "3.6.1",
   "setting": {
@@ -8,7 +8,7 @@
     "enhance": true,
     "minified": true,
     "postcss": true,
-    "urlCheck": false,
+    "urlCheck": true,
     "compileWorklet": false,
     "uglifyFileName": false,
     "uploadWithSourceMap": true,
@@ -28,7 +28,7 @@
   },
   "simulatorPluginLibVersion": {},
   "packOptions": {
-    "ignore": [],
+    "ignore": [{ "type": "folder", "value": "preview" }, { "type": "folder", "value": "tests" }, { "type": "folder", "value": "tools" }, { "type": "file", "value": "README.md" }, { "type": "file", "value": "PAGES.md" }],
     "include": []
   },
   "editorSetting": {}

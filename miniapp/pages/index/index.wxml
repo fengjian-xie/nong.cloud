@@ -1,20 +1,10 @@
-<view class="page home-page">
-  <view class="home-hero">
-    <view class="hero-main">福安农事服务</view>
-    <view class="hero-slogan">服务三农 · 助力增收</view>
-    <view class="hero-sub">福安本地农事服务，省心更放心</view>
-  </view>
-  <view wx:if="{{loading}}" class="home-loading">正在加载福安服务…</view>
-  <block wx:elif="{{feed}}">
-    <view class="location-row" bindtap="goMap"><text class="pin">●</text><text>当前位置：福安市</text><text class="location-action">查看地图 ›</text></view>
-    <view class="section open-section">
-      <view class="section-title"><text>附近资源</text><text class="section-link" bindtap="goMap">查看全部 ›</text></view>
-      <view class="resource-grid"><view class="resource" wx:for="{{feed.resources}}" wx:key="name"><text class="resource-icon">{{item.icon}}</text><text>{{item.name}}</text><text class="muted">{{item.distance}}</text></view></view>
-      <view class="divider" />
-      <view class="section-title"><text>常用农事服务</text><text class="section-link" bindtap="goService">发布需求 ›</text></view>
-      <view class="service-grid"><view class="service-shortcut" wx:for="{{feed.services}}" wx:key="*this" bindtap="goService"><text class="service-symbol">✦</text><text>{{item}}</text></view></view>
-    </view>
-    <view class="reminder"><text class="notice-icon">●</text><view><strong>成熟期提醒</strong><text>{{feed.reminder.crop}} 预计 {{feed.reminder.date}} 成熟</text><small>地块：{{feed.reminder.plot}}</small></view><text>›</text></view>
-    <view class="sync-notice" bindtap="goRecords"><text class="cloud-icon">↥</text><view><strong>离线数据</strong><text>您有 {{feed.syncCount}} 条记录待同步</text></view><text class="sync-button">去同步</text></view>
-  </block>
+<view class="page">
+ <view class="brand"><image class="brand-icon" mode="aspectFit" src="/assets/vi-mark.png"/><view><text class="brand-name">乡桥</text><text class="muted small">连接乡土，共享丰收</text></view></view>
+ <text class="title">把每一季耕耘，<text class="headline-line">连接到丰收。</text></text>
+ <view class="intro muted">服务产业带的小农户、合作社和农事服务主体。</view>
+ <image class="media" src="/assets/fuan-farm.jpg" mode="aspectFill"/><view class="small muted gap">福安葡萄产区 · 用户提供的资料影像，非直播</view>
+ <button class="primary gap" bindtap="goWorkspace">进入我的工作台</button>
+ <view class="surface"><text class="heading">从这里，进入乡桥。</text><button class="row" bindtap="goFarm"><view><text>乡桥农场</text><view class="small muted">看生产、留意向、跟踪一季耕耘</view></view><view class="chevron"/></button><button class="row" bindtap="goApplication"><view><text>加入农事中心</text><view class="small muted">查看角色、准入与执行标准</view></view><view class="chevron"/></button><button class="row" bindtap="about"><text>了解乡桥</text><view class="chevron"/></button></view>
+ <view class="surface"><text class="heading">一张农事卡，留下真实记录。</text><image src="/assets/card.jpg" class="media" mode="aspectFit"/><view class="small muted">研发示意，非量产实物。开工、收工、A/B/C五键；GPS、离线存储、蓝牙同步、NFC服务关联。</view><view class="note">农户平台服务免费。办卡100元/张，补卡100元/张；商品与实际服务另行约定。</view></view>
+ <view class="demo-foot">交互演示 · 不接真实硬件、付款或合同</view>
 </view>

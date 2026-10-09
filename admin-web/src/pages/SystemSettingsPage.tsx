@@ -1,5 +1,6 @@
 import { KeyRound, MapPinned, Pencil, Plus, Save, Trash2, UserCog, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { deleteSetting, getSettingRows, saveSetting, type SettingGroup } from '../api/mock'
 import { PaginationBar } from '../components/PaginationBar'
 import type { OperationRow } from '../types'
@@ -22,8 +23,8 @@ const permissionGroups = [
 ]
 const allPermissions = permissionGroups.flatMap((section) => section.items)
 
-export function SystemSettingsPage() {
-  const [group, setGroup] = useState<SettingGroup>('administrators')
+export function SystemSettingsPage({ initialGroup = 'administrators' }: { initialGroup?: SettingGroup } = {}) {
+  const [group, setGroup] = useState<SettingGroup>(initialGroup)
   const [rows, setRows] = useState<OperationRow[]>([])
   const [editing, setEditing] = useState<OperationRow | null>(null)
   const [toast, setToast] = useState('')
@@ -32,6 +33,7 @@ export function SystemSettingsPage() {
   const config = groups[group]
 
   useEffect(() => {
+    if (group === 'administrators') return
     let active = true
     getSettingRows(group).then(({ data }) => { if (active) { setRows(data); setPage(1) } })
     return () => { active = false }
@@ -61,11 +63,17 @@ export function SystemSettingsPage() {
     await deleteSetting(group, String(row.id)); setRows((current) => current.filter((item) => item.id !== row.id)); notify('已删除')
   }
 
+  if (group === 'administrators') return <div className="settings-page">
+    <div className="page-heading"><div><h1>系统设置</h1><p>管理员权限采用统一模块；主体字典和所在地设置继续保留。</p></div><Link className="primary-inline" to="/settings/permissions"><UserCog size={17}/>管理员权限设置</Link></div>
+    <div className="settings-tabs">{(Object.keys(groups) as SettingGroup[]).map(key => { const Icon = groups[key].icon; return <button key={key} className={group === key ? 'active' : ''} onClick={() => { setGroup(key); setEditing(null); setPage(1) }}><Icon size={18}/><span><strong>{groups[key].title}</strong><small>{groups[key].description}</small></span></button> })}</div>
+    <section className="panel" style={{ padding: 24 }}><h2>岗位权限与独立审批</h2><p>查看与操作权限、服务中心范围、变更申请和日志已集中到管理员权限模块。旧的“全部模块即时生效”编辑入口已停用。</p><p>当前仅本机演示，不更改真实登录或生产权限。</p><Link className="secondary-button" to="/settings/permissions">打开管理员权限设置 →</Link></section>
+  </div>
+
   return <div className="settings-page">
     <div className="page-heading"><div><h1>系统设置</h1><p>统一维护后台账号权限、主体字典与福安地块行政区划</p></div><button className="primary-inline" onClick={() => setEditing({ ...emptyByGroup[group] })}><Plus size={17}/>新增{config.title}</button></div>
     <div className="settings-tabs">{(Object.keys(groups) as SettingGroup[]).map((key) => { const Icon = groups[key].icon; return <button key={key} className={group === key ? 'active' : ''} onClick={() => { setGroup(key); setEditing(null); setPage(1) }}><Icon size={18}/><span><strong>{groups[key].title}</strong><small>{groups[key].description}</small></span></button> })}</div>
     <section className="panel operation-panel"><div className="panel-head"><div><h2>{config.title}</h2><p>{config.description} · 支持新增、编辑和删除</p></div><span className="settings-count">{rows.length} 条</span></div><div className="data-table-wrap"><table className="data-table"><thead><tr><th>序号</th>{config.columns.map(([, label]) => <th key={label}>{label}</th>)}<th>状态</th><th>操作</th></tr></thead><tbody>{paginatedRows.map((row, index) => <tr key={String(row.id)}><td className="serial-cell">{(currentPage - 1) * pageSize + index + 1}</td>{config.columns.map(([key]) => <td key={key}>{String(row[key] || '—')}</td>)}<td><span className="status-chip positive">{String(row.status)}</span></td><td><div className="row-actions"><button onClick={() => setEditing({ ...row })}><Pencil size={14}/>编辑</button><button className="danger" onClick={() => remove(row)}><Trash2 size={14}/>删除</button></div></td></tr>)}</tbody></table></div><PaginationBar total={rows.length} page={currentPage} pageSize={pageSize} onPageChange={setPage} onPageSizeChange={(size) => { setPageSize(size); setPage(1) }}/></section>
-    {editing ? <div className="drawer-layer"><button className="drawer-scrim" onClick={() => setEditing(null)} aria-label="关闭"/><aside className="detail-drawer"><div className="drawer-head"><div><span>系统设置</span><h2>{editing.id ? `编辑${config.title}` : `新增${config.title}`}</h2></div><button className="icon-button" onClick={() => setEditing(null)}><X/></button></div><div className="settings-form">{Object.keys(editing).filter((key) => !['id', 'status'].includes(key)).map((key) => key === 'permissions' && group === 'administrators' ? <fieldset className="permission-fieldset" key={key}><legend>权限范围</legend><label className="permission-all"><input type="checkbox" checked={selectedPermissions.length === allPermissions.length} onChange={toggleAllPermissions}/><span>全部权限</span><small>勾选或取消全部模块</small></label>{permissionGroups.map((section) => <div className="permission-section" key={section.title}><strong>{section.title}</strong><div>{section.items.map((permission) => <label key={permission}><input type="checkbox" checked={selectedPermissions.includes(permission)} onChange={() => togglePermission(permission)}/><span>{permission}</span></label>)}</div></div>)}<p>已选择 {selectedPermissions.length} / {allPermissions.length} 项</p></fieldset> : <label key={key}><span>{({ name: '名称', phone: '手机号', role: '角色', identities: '身份（逗号分隔）', code: '行政代码', villages: '覆盖村（逗号分隔）' } as Record<string,string>)[key] || key}</span><input value={String(editing[key] || '')} onChange={(e) => setEditing({ ...editing, [key]: e.target.value })}/></label>)}<label><span>状态</span><select value={String(editing.status)} onChange={(e) => setEditing({ ...editing, status: e.target.value })}><option>启用</option><option>停用</option></select></label><div className="permission-tip"><KeyRound size={16}/><span>管理员权限修改即时生效，并写入审计日志；建议按岗位授予最小权限。</span></div></div><div className="drawer-actions"><button className="secondary-button" onClick={() => setEditing(null)}>取消</button><button className="primary-inline" onClick={save}><Save size={16}/>保存设置</button></div></aside></div> : null}
+    {editing ? <div className="drawer-layer"><button className="drawer-scrim" onClick={() => setEditing(null)} aria-label="关闭"/><aside className="detail-drawer"><div className="drawer-head"><div><span>系统设置</span><h2>{editing.id ? `编辑${config.title}` : `新增${config.title}`}</h2></div><button className="icon-button" onClick={() => setEditing(null)}><X/></button></div><div className="settings-form">{Object.keys(editing).filter((key) => !['id', 'status'].includes(key)).map((key) => key === 'permissions' ? <fieldset className="permission-fieldset" key={key}><legend>权限范围</legend><label className="permission-all"><input type="checkbox" checked={selectedPermissions.length === allPermissions.length} onChange={toggleAllPermissions}/><span>全部权限</span><small>勾选或取消全部模块</small></label>{permissionGroups.map((section) => <div className="permission-section" key={section.title}><strong>{section.title}</strong><div>{section.items.map((permission) => <label key={permission}><input type="checkbox" checked={selectedPermissions.includes(permission)} onChange={() => togglePermission(permission)}/><span>{permission}</span></label>)}</div></div>)}<p>已选择 {selectedPermissions.length} / {allPermissions.length} 项</p></fieldset> : <label key={key}><span>{({ name: '名称', phone: '手机号', role: '角色', identities: '身份（逗号分隔）', code: '行政代码', villages: '覆盖村（逗号分隔）' } as Record<string,string>)[key] || key}</span><input value={String(editing[key] || '')} onChange={(e) => setEditing({ ...editing, [key]: e.target.value })}/></label>)}<label><span>状态</span><select value={String(editing.status)} onChange={(e) => setEditing({ ...editing, status: e.target.value })}><option>启用</option><option>停用</option></select></label><div className="permission-tip"><KeyRound size={16}/><span>当前仅为主体与行政区划字典演示；真实后台配置、权限和审计需服务端接入。</span></div></div><div className="drawer-actions"><button className="secondary-button" onClick={() => setEditing(null)}>取消</button><button className="primary-inline" onClick={save}><Save size={16}/>保存设置</button></div></aside></div> : null}
     {toast ? <div className="toast">{toast}</div> : null}
   </div>
 }

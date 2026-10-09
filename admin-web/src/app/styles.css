@@ -1,3 +1,5 @@
+@import '../../../miniapp/preview/choice-menu.css';
+
 :root {
   font-family: Inter, "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
   color: #1d2924;
@@ -155,13 +157,8 @@ button.task-row:hover { background: #f7faf8; }
 .pagination-bar nav button.active { color: white; border-color: var(--green-700); background: var(--green-700); }
 .pagination-bar nav button:disabled { color: #b7bfba; background: #f3f5f4; cursor: not-allowed; }
 .member-filter-toolbar { position: relative; z-index: 3; overflow: visible; }
-.member-filter-select, .multi-filter-trigger { min-width: 142px; height: 38px; padding: 0 30px 0 11px; color: #354139; border: 1px solid var(--line); border-radius: 7px; background: #fbfcfb; font-size: 13px; }
+.member-filter-select { min-width: 142px; height: 38px; padding: 0 30px 0 11px; color: #354139; border: 1px solid var(--line); border-radius: 7px; background: #fbfcfb; font-size: 13px; }
 .multi-filter { position: relative; }
-.multi-filter-trigger { position: relative; display: flex; align-items: center; text-align: left; cursor: pointer; }
-.multi-filter-trigger::after { content: ''; position: absolute; right: 12px; top: 14px; width: 6px; height: 6px; border-right: 1.5px solid var(--muted); border-bottom: 1.5px solid var(--muted); transform: rotate(45deg); transition: transform .15s ease; }
-.multi-filter.open .multi-filter-trigger { border-color: var(--green-600); box-shadow: 0 0 0 3px rgb(11 138 76 / 10%); }
-.multi-filter.open .multi-filter-trigger::after { top: 17px; transform: rotate(225deg); }
-.multi-filter-panel { position: absolute; z-index: 12; top: calc(100% + 7px); left: 0; width: 190px; padding: 8px; border: 1px solid var(--line); border-radius: 8px; background: white; box-shadow: 0 12px 30px rgb(20 55 38 / 15%); }
 .multi-filter-panel label { min-height: 38px; padding: 6px 7px; display: flex; align-items: center; gap: 8px; border-radius: 6px; cursor: pointer; }
 .multi-filter-panel label:hover { background: #f4f8f5; }
 .multi-filter-panel label > span { font-size: 11px; line-height: 1.3; }

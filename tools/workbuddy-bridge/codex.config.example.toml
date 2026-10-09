@@ -1,0 +1,11 @@
+# Example only: not installed or registered by this file.
+# Merge this block into the chosen Codex configuration; do not overwrite existing settings.
+[mcp_servers.xiangqiao_workbuddy]
+command = "/usr/local/bin/node"
+args = ["/Users/xiexiansheng/Downloads/合作社/m.nong.cloud/nong.cloud/tools/workbuddy-bridge/server.mjs"]
+startup_timeout_sec = 10
+tool_timeout_sec = 60
+
+[mcp_servers.xiangqiao_workbuddy.env]
+# Disabled until snapshot sharing has been explicitly authorized.
+XQ_WB_ALLOW_REVIEW = "0"

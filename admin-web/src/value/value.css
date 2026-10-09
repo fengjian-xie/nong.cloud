@@ -1,0 +1,60 @@
+.value-page { min-width: 0; }
+.value-page h1 { display: flex; gap: 10px; align-items: center; }
+.value-nav { display: flex; flex-wrap: wrap; gap: 8px; }
+.value-nav a { padding: 10px 14px; border: 1px solid var(--line); border-radius: 5px; color: var(--text); background: white; text-decoration: none; font-size: 13px; }
+.value-nav a[aria-current=page] { background: var(--vi-forest); color: white; }
+.value-select { display: flex; align-items: center; gap: 12px; font-size: 13px; }
+.value-select select { max-width: 100%; padding: 10px; border: 1px solid var(--line); border-radius: 4px; }
+.value-check { display: flex !important; align-items: center; gap: 10px; }
+.value-check input { width: 17px !important; accent-color: var(--vi-forest); }
+.value-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.value-page .farm-form { display: grid; gap: 18px; padding: 22px; }
+.value-page .farm-form label { display: grid; gap: 8px; font-size: 13px; line-height: 1.8; }
+.value-page .farm-form :is(input, select, textarea) { width: 100%; min-width: 0; padding: 11px 12px; border: 1px solid var(--line); border-radius: 5px; background: white; color: var(--text); font: inherit; }
+.value-page .farm-form textarea { min-height: 150px; resize: vertical; }
+.value-page .farm-form .value-check { flex-direction: row; justify-content: flex-start; align-items: center; }
+.value-page .farm-form .value-check input { flex: 0 0 17px; padding: 0; }
+.value-page .farm-form > .primary-button { width: fit-content; }
+.value-page .farm-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.value-page .farm-panel > .secondary-button { margin: 18px 22px 0; }
+.value-page .farm-panel > p { padding: 0 22px; font-size: 13px; line-height: 1.9; }
+.value-page .farm-panel > a { display: inline-flex; margin: 0 22px 22px; }
+.value-page .value-stories { padding: 0 22px 18px; }
+.value-page .value-filters { padding: 22px; }
+.value-passport { color: var(--vi-forest); }
+.value-passport-head { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; padding: 22px; background: #edf2e8; border: 1px solid var(--line); border-radius: 5px; }
+.value-passport-head h2 { margin: 6px 0; font-size: 25px; }
+.value-passport-head p, .value-passport-head small { font-size: 12px; }
+.value-passport-head .farm-tag { margin-left: auto; }
+.value-grid-dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; }
+.value-grid-dl > div { padding: 18px 0; border-bottom: 1px solid var(--line); }
+.value-grid-dl dt { color: var(--muted); font-size: 12px; margin-bottom: 10px; }
+.value-grid-dl dd { margin: 0; font-size: 14px; line-height: 1.8; overflow-wrap: anywhere; }
+.value-timeline { border-left: 2px solid var(--vi-field); padding-left: 18px; margin: 22px 0; }
+.value-timeline article { display: grid; gap: 8px; padding: 12px 0; }
+.value-timeline :is(time, small) { color: var(--muted); font-size: 12px; }
+.value-calendar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; padding-top: 12px; }
+.value-calendar article { padding: 20px; border: 1px solid var(--line); border-radius: 5px; background: #fafbf7; min-width: 0; display: grid; gap: 12px; }
+.value-calendar article h3, .value-calendar article p { margin: 0; }
+.value-calendar article :is(p, small) { line-height: 1.8; font-size: 12px; color: var(--muted); }
+.value-calendar article > button { justify-self: start; }
+.value-filters { display: flex; flex-wrap: wrap; gap: 18px; }
+.value-filters label, .value-note label { display: grid; gap: 8px; font-size: 12px; }
+.value-filters :is(input, select), .value-note textarea { border: 1px solid var(--line); padding: 10px; border-radius: 4px; background: white; color: var(--text); max-width: 100%; }
+.value-note { display: grid; gap: 10px; margin: 14px 0; }
+.value-note textarea { width: 100%; min-height: 80px; resize: vertical; }
+.value-note button { justify-self: start; }
+.value-stories article { padding: 18px 0; border-bottom: 1px solid var(--line); display: grid; gap: 12px; }
+.value-stories p { white-space: pre-wrap; font-size: 14px; line-height: 1.9; }
+.value-stories small, .value-footnote { color: var(--muted); font-size: 12px; line-height: 1.9; }
+.value-page .farm-panel a { color: var(--vi-forest); }
+.cf-product-hub .cf-panel { margin: 22px 0; padding: 28px; background: white; border: 1px solid var(--vi-line); border-radius: 5px; }
+.cf-product-hub .cf-panel p { color: var(--vi-muted); font-size: 14px; line-height: 1.9; }
+.cf-product-hub .cf-form { display: grid; gap: 18px; margin: 20px 0; }
+.cf-product-hub .cf-form label { display: grid; gap: 10px; font-size: 14px; }
+.cf-product-hub .cf-form textarea { padding: 14px; min-height: 130px; border: 1px solid var(--vi-line); border-radius: 5px; font: inherit; resize: vertical; }
+.cf-product-hub .cf-notice { margin-top: 24px; }
+.cf-product-hub .cf-fine-print { font-size: 12px; color: var(--vi-muted); line-height: 1.9; }
+.cf-product-hub .cf-section-title > span { font-size: 12px; color: var(--vi-field); }
+.cf-product-hub .cf-section-title h1 { display: block; }
+@media (max-width: 680px) { .value-calendar, .value-grid-dl, .value-page .farm-form-grid { grid-template-columns: 1fr; } .value-page .farm-form { padding: 16px; } .value-page .farm-form :is(input, select, textarea) { font-size: 16px; } .value-select { align-items: start; flex-direction: column; } .value-passport-head { padding: 14px; } .value-passport-head .farm-tag { margin-left: 0; } .value-nav a { flex: 1 1 40%; } .value-note textarea { font-size: 16px; } }

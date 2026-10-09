@@ -1,0 +1,56 @@
+# TEMPLATE ONLY: do not load until DNS, release path and valid TLS certificate
+# have been verified on the chosen host. This does not modify m.nong.cloud.
+server {
+    listen 80;
+    listen [::]:80;
+    server_name api.nong.cloud;
+
+    location ^~ /.well-known/acme-challenge/ {
+        root /var/www/xiangqiao-api-portal/acme;
+        try_files $uri =404;
+    }
+    location / {
+        return 301 https://api.nong.cloud$request_uri;
+    }
+}
+
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    server_name api.nong.cloud;
+
+    # Replace with verified certificate/key locations; never copy another
+    # domain's certificate without checking that api.nong.cloud is covered.
+    ssl_certificate /etc/letsencrypt/live/api.nong.cloud/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/api.nong.cloud/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+
+    # A dedicated release symlink, not the existing admin site's directory.
+    root /var/www/xiangqiao-api-portal/current;
+    index index.html;
+    add_header X-Content-Type-Options nosniff always;
+    add_header X-Frame-Options SAMEORIGIN always;
+    add_header Referrer-Policy strict-origin-when-cross-origin always;
+
+    # No gateway has been implemented. Do not return SPA HTML for API calls
+    # or blindly forward these requests to the existing port 8080 service.
+    location ~ ^/(open-api|api)(/|$) {
+        default_type application/json;
+        add_header Cache-Control no-store always;
+        return 503 '{"code":503,"errorCode":"XQ-OPEN-503-001","message":"开放接口尚未部署；此站点只提供文档与本地沙箱","data":null,"traceId":"$request_id","timestamp":"$time_iso8601"}';
+    }
+
+    location ^~ /assets/ {
+        try_files $uri =404;
+        add_header Cache-Control "public, max-age=31536000, immutable";
+        add_header X-Content-Type-Options nosniff always;
+    }
+
+    location / {
+        try_files $uri $uri/ /index.html;
+        add_header Cache-Control no-store always;
+        add_header X-Content-Type-Options nosniff always;
+        add_header X-Frame-Options SAMEORIGIN always;
+        add_header Referrer-Policy strict-origin-when-cross-origin always;
+    }
+}

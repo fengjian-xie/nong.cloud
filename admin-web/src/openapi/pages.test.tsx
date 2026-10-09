@@ -1,0 +1,96 @@
+// @vitest-environment jsdom
+import { afterEach, beforeAll, describe, expect, it, vi } from 'vitest'
+import { cleanup, fireEvent, render, screen, within } from '@testing-library/react'
+import { MemoryRouter } from 'react-router-dom'
+import OpenApiPage from './OpenApiPage'
+import { STORAGE_KEY } from './model'
+
+beforeAll(() => {
+  Object.defineProperty(HTMLDialogElement.prototype, 'showModal', { configurable: true, value: function () { this.setAttribute('open', '') } })
+  Object.defineProperty(HTMLDialogElement.prototype, 'close', { configurable: true, value: function () { this.removeAttribute('open') } })
+  Object.defineProperty(URL, 'createObjectURL', { configurable: true, value: () => 'blob:openapi-draft' })
+  Object.defineProperty(URL, 'revokeObjectURL', { configurable: true, value: () => {} })
+})
+afterEach(() => { cleanup(); vi.restoreAllMocks(); vi.unstubAllGlobals(); localStorage.clear() })
+const setup = (tab = 'overview') => render(<MemoryRouter initialEntries={[`/open-api?tab=${tab}`]}><OpenApiPage/></MemoryRouter>)
+const go = (name: string) => fireEvent.click(within(screen.getByRole('navigation', { name: '开放平台栏目' })).getByRole('button', { name }))
+const run = () => fireEvent.click(screen.getByRole('button', { name: '运行本地调试' }))
+
+describe('开放平台页面', () => {
+  it.each(['overview', 'catalog', 'apps', 'debug', 'logs', 'guide'])('%s栏目可直接打开', tab => {
+    setup(tab); expect(screen.getByRole('heading', { name: 'API开放平台' })).toBeTruthy()
+    expect(screen.getByText(/^前端沙箱 · 接口尚未部署/)).toBeTruthy()
+  })
+  it('目录筛选、空结果清理和发送调试可用', () => {
+    setup('catalog')
+    fireEvent.change(screen.getByLabelText('搜索接口名称、路径或权限'), { target: { value: 'cards.events.write' } })
+    expect(screen.getByRole('heading', { name: '农事卡事件上传' })).toBeTruthy()
+    fireEvent.change(screen.getByLabelText('搜索接口名称、路径或权限'), { target: { value: '不存在的接口' } })
+    expect(screen.getByText('没有匹配的接口')).toBeTruthy()
+    fireEvent.click(screen.getByRole('button', { name: '清空筛选' }))
+    fireEvent.click(screen.getByRole('button', { name: '送到本地沙箱' }))
+    expect((screen.getByLabelText('选择调试接口') as HTMLSelectElement).value).toBe('maturity')
+  })
+  it('本地请求没有网络调用；成功、参数错误、权限拒绝联动日志', () => {
+    const fetch = vi.fn(); vi.stubGlobal('fetch', fetch); setup('debug'); run()
+    expect(screen.getByText('本地模拟 HTTP 200')).toBeTruthy()
+    fireEvent.change(screen.getByLabelText('JSON参数'), { target: { value: '{broken' } }); run()
+    expect(screen.getByText('本地模拟 HTTP 400')).toBeTruthy()
+    fireEvent.change(screen.getByLabelText('选择调试接口'), { target: { value: 'inventory' } }); run()
+    expect(screen.getByText('本地模拟 HTTP 403')).toBeTruthy(); expect(fetch).not.toHaveBeenCalled()
+    go('调用日志'); expect(screen.getAllByRole('row')).toHaveLength(4)
+    fireEvent.change(screen.getByLabelText('日志状态筛选'), { target: { value: '400' } }); expect(screen.getAllByRole('row')).toHaveLength(2)
+    fireEvent.change(screen.getByLabelText('日志状态筛选'), { target: { value: '429' } }); expect(screen.getByText('没有匹配的数据，请调整筛选条件')).toBeTruthy()
+  })
+  it('创建、模拟审批，只保存元数据，不保存展示串或调用正文', () => {
+    setup('apps'); fireEvent.click(screen.getByRole('button', { name: '创建接入应用' }))
+    fireEvent.change(screen.getByLabelText('应用名称'), { target: { value: '测试设备应用' } })
+    fireEvent.change(screen.getByLabelText('经营主体'), { target: { value: '虚构设备厂' } })
+    fireEvent.change(screen.getByLabelText('应用用途'), { target: { value: '设备接入' } })
+    fireEvent.click(screen.getByRole('button', { name: '提交演示申请' }))
+    const row = screen.getByRole('row', { name: /测试设备应用/ }); expect(within(row).getByText('待审核')).toBeTruthy()
+    expect(within(row).queryByText('成熟货源查询')).toBeNull()
+    fireEvent.click(within(row).getByRole('button', { name: '模拟审核' }))
+    expect((screen.getByRole('button', { name: '确认模拟开通' }) as HTMLButtonElement).disabled).toBe(true)
+    fireEvent.click(screen.getByRole('checkbox')); fireEvent.click(screen.getByRole('button', { name: '确认模拟开通' }))
+    expect((screen.getByLabelText('DEMO展示串') as HTMLTextAreaElement).value).toContain('DEMO_NOT_VALID_')
+    expect(localStorage.getItem(STORAGE_KEY)).not.toMatch(/DEMO_NOT_VALID|parameters|envelope|calls/)
+    fireEvent.click(screen.getByRole('button', { name: '知道了，关闭' })); expect(screen.queryByLabelText('DEMO展示串')).toBeNull()
+    go('沙箱调试'); fireEvent.change(screen.getByLabelText('选择调试接口'), { target: { value: 'card-sync' } })
+    const apps = JSON.parse(localStorage.getItem(STORAGE_KEY)!); fireEvent.change(screen.getByLabelText('调试应用'), { target: { value: apps[0].id } }); run(); run()
+    expect(screen.getByText('命中本地幂等结果，未再次提交。')).toBeTruthy()
+    expect(localStorage.getItem(STORAGE_KEY)).not.toMatch(/parameters|envelope|calls|DEMO_NOT_VALID/)
+  })
+  it('轮换需完整名称，旧演示版本失效，更新版本后恢复，停用被拒绝', () => {
+    setup('debug'); run(); go('接入应用')
+    fireEvent.click(screen.getByRole('button', { name: '轮换演示密钥' }))
+    fireEvent.change(screen.getByLabelText('输入应用全名确认'), { target: { value: '产业带采购看板' } })
+    fireEvent.click(screen.getByRole('button', { name: '确认轮换' })); fireEvent.click(screen.getByRole('button', { name: '知道了，关闭' }))
+    go('沙箱调试'); run(); expect(screen.getByText('本地模拟 HTTP 401')).toBeTruthy()
+    fireEvent.click(screen.getByRole('button', { name: '使用当前版本' })); run(); expect(screen.getByText('本地模拟 HTTP 200')).toBeTruthy()
+    go('接入应用'); fireEvent.click(screen.getByRole('button', { name: '停用沙箱' }))
+    fireEvent.change(screen.getByLabelText('输入应用全名确认'), { target: { value: '产业带采购看板' } }); fireEvent.click(screen.getByRole('button', { name: '确认停用' }))
+    go('沙箱调试'); fireEvent.click(screen.getByRole('button', { name: '使用当前版本' })); run(); expect(screen.getByText('本地模拟 HTTP 401')).toBeTruthy()
+  })
+  it('损坏缓存可恢复，拒绝本机写入仍能本地演示并提示', () => {
+    localStorage.setItem(STORAGE_KEY, '{broken'); setup('apps'); expect(screen.getByRole('alert').textContent).toContain('缓存不可用')
+    vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => { throw new Error('blocked') })
+    fireEvent.click(screen.getByRole('button', { name: '模拟审核' })); fireEvent.click(screen.getByRole('checkbox')); fireEvent.click(screen.getByRole('button', { name: '确认模拟开通' }))
+    fireEvent.click(screen.getByRole('button', { name: '知道了，关闭' })); expect(screen.getByRole('alert').textContent).toContain('刷新后可能丢失')
+    expect(screen.getAllByText('沙箱启用')).toHaveLength(2)
+  })
+  it('刷新恢复应用但不恢复响应、统计、日志或展示串', () => {
+    const view = setup('apps'); fireEvent.click(screen.getByRole('button', { name: '模拟审核' })); fireEvent.click(screen.getByRole('checkbox')); fireEvent.click(screen.getByRole('button', { name: '确认模拟开通' }))
+    fireEvent.click(screen.getByRole('button', { name: '知道了，关闭' })); go('沙箱调试'); run(); view.unmount(); setup('logs')
+    expect(screen.getByText('暂无本地调试记录')).toBeTruthy(); expect(screen.getByText('2个沙箱启用 · 仅本机元数据')).toBeTruthy(); expect(screen.queryByLabelText('DEMO展示串')).toBeNull()
+  })
+  it('文档可导出，复制失败时有手动全选入口', async () => {
+    const blob = vi.spyOn(URL, 'createObjectURL'); const anchor = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {})
+    setup('catalog'); fireEvent.click(screen.getByRole('button', { name: '导出OpenAPI草案' }))
+    expect(blob).toHaveBeenCalledOnce(); expect(anchor).toHaveBeenCalledOnce()
+    Object.defineProperty(navigator, 'clipboard', { configurable: true, value: { writeText: vi.fn().mockRejectedValue(new Error('denied')) } })
+    fireEvent.click(screen.getByRole('button', { name: '复制草案' }))
+    expect(await screen.findByRole('dialog', { name: '手动复制接入草案' })).toBeTruthy()
+    expect((screen.getByLabelText('接入草案文本') as HTMLTextAreaElement).value).toContain('DEMO_TOKEN_NOT_VALID')
+  })
+})

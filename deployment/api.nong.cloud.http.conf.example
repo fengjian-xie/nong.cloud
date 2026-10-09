@@ -1,0 +1,15 @@
+# Temporary HTTP-01 bootstrap; the deployer replaces this with the TLS vhost.
+server {
+    listen 80;
+    listen [::]:80;
+    server_name api.nong.cloud;
+
+    location ^~ /.well-known/acme-challenge/ {
+        root /var/www/xiangqiao-api-portal/acme;
+        try_files $uri =404;
+    }
+    location / {
+        default_type text/plain;
+        return 503 'API portal deployment in progress';
+    }
+}

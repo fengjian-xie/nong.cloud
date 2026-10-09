@@ -1,0 +1,5 @@
+import {expect,it} from 'vitest'
+import {connectedPath,resolveConnectedPath} from './routes'
+it('implemented deep links map to the matching data module, not to plots',()=>{expect(resolveConnectedPath('/manage/production/cards').module).toBe('cards');expect(resolveConnectedPath('/manage/customer/news').module).toBe('news');expect(resolveConnectedPath('/manage/production/card-requests').module).toBe('cardRequests');expect(resolveConnectedPath(connectedPath('orders')).module).toBe('orders')})
+it('sensor and custom role prototype routes do not manufacture implemented data',()=>{for(const path of ['/manage/production/soil','/manage/subjects/identities','/missing'])expect(resolveConnectedPath(path)).toEqual({module:null,available:false});expect(resolveConnectedPath('/').available).toBe(true)})
+it('software trade, branch and settlement routes resolve to their own permission-gated modules',()=>{expect(resolveConnectedPath('/manage/finance/settlement').module).toBe('settlements');expect(resolveConnectedPath('/trade-orders').module).toBe('trades');expect(resolveConnectedPath('/manage/platform/centers').module).toBe('centers')})
