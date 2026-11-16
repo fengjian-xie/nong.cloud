@@ -1,0 +1,13 @@
+{
+  "domain": "api.nong.cloud",
+  "released_at_utc": "20261004T044155Z",
+  "bundle_sha256": "20aed3ad0b2a2c03a19e7ad78543c52dbf3b1f5837645df777b7881ab998055f",
+  "release": "/var/www/xiangqiao-api-portal/releases/20261004T044155Z",
+  "current": "/var/www/xiangqiao-api-portal/current",
+  "backup": "/var/backups/xiangqiao-api-portal/20261004T044155Z",
+  "config": "/etc/nginx/conf.d/api.nong.cloud.conf",
+  "certificate": "/etc/letsencrypt/live/api.nong.cloud",
+  "previous_api_config": null,
+  "previous_current": null,
+  "other_nginx_configs_unchanged": true
+}

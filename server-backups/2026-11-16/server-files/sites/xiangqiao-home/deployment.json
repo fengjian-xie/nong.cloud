@@ -1,0 +1,14 @@
+{
+  "domain": "nong.cloud",
+  "release": "/var/www/xiangqiao-home/releases/20261006T161647Z",
+  "current": "/var/www/xiangqiao-home/current",
+  "backup": "/var/backups/xiangqiao-home/20261006T161647Z",
+  "config": "/etc/nginx/conf.d/nong.cloud.conf",
+  "released_at_utc": "20261006T161647Z",
+  "bundle_sha256": "d6d4bb83dd32ce2783df593e5b9c9fc04df8642cd12ce6e78e391493c57b090c",
+  "previous_config_sha256": "d835421d967c4eb219f2e9cf49da16e378d1cfde239eb4a9c4a69ea609d69981",
+  "other_sites_unchanged": true,
+  "legacy_api_status": 401,
+  "certificate_reused": true,
+  "previous_current": "/var/www/xiangqiao-home/releases/20261005T140926Z"
+}

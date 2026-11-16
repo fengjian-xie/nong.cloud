@@ -1,0 +1,46 @@
+services:
+  database:
+    image: postgis/postgis:17-3.5
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-xiangqiao}
+      POSTGRES_USER: ${POSTGRES_USER:-xiangqiao}
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+    volumes:
+      - xiangqiao_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-xiangqiao} -d ${POSTGRES_DB:-xiangqiao}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [backend]
+
+  platform:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      database:
+        condition: service_healthy
+    environment:
+      DB_URL: jdbc:postgresql://database:5432/${POSTGRES_DB:-xiangqiao}
+      DB_USERNAME: ${POSTGRES_USER:-xiangqiao}
+      DB_PASSWORD: "${POSTGRES_PASSWORD}"
+      JWT_SECRET: "${JWT_SECRET}"
+      DATA_SECRET: "${DATA_SECRET}"
+      BOOTSTRAP_OPERATOR_MOBILE: "${BOOTSTRAP_OPERATOR_MOBILE}"
+      BOOTSTRAP_OPERATOR_PASSWORD: "${BOOTSTRAP_OPERATOR_PASSWORD}"
+      BOOTSTRAP_COUNTY_CODE: "350981"
+      INTEGRATION_MODE: ${INTEGRATION_MODE:-mock}
+    ports:
+      - "127.0.0.1:8080:8080"
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    networks: [backend]
+
+volumes:
+  xiangqiao_pgdata:
+networks:
+  backend:

@@ -1,0 +1,1 @@
+function c(o,n){const t=URL.createObjectURL(new Blob(["\uFEFF",n],{type:"text/plain;charset=utf-8"})),e=document.createElement("a");e.href=t,e.download=o,document.body.appendChild(e),e.click(),e.remove(),window.setTimeout(()=>URL.revokeObjectURL(t),1e3)}export{c as d};

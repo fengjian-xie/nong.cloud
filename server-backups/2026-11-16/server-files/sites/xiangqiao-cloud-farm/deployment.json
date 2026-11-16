@@ -1,0 +1,16 @@
+{
+  "domain": "nc.nong.cloud",
+  "released_at_utc": "20261006T162435Z",
+  "release": "/var/www/xiangqiao-cloud-farm/releases/20261006T162435Z",
+  "previous_release": "/var/www/xiangqiao-cloud-farm/releases/20261005T135317Z",
+  "backup": "/var/backups/xiangqiao-cloud-farm/20261006T162435Z",
+  "bundle_sha256": "37dfbe952ac68ffe98089e57a0cfcb4896da8ed987e3cc98411cde67238128f0",
+  "config_unchanged": true,
+  "config_sha256": "6ef0c2c026586367abc5a6ddccb673c2a222e771be39c9e86915fba993155613",
+  "previous_config_sha256": "6ef0c2c026586367abc5a6ddccb673c2a222e771be39c9e86915fba993155613",
+  "other_sites_unchanged": true,
+  "mode": "demo",
+  "real_transactions_enabled": false,
+  "prototype_path": null,
+  "prototype_sha256": null
+}

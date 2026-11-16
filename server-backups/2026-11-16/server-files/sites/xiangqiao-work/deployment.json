@@ -1,0 +1,16 @@
+{
+  "domain": "work.nong.cloud",
+  "released_at_utc": "20261006T163119Z",
+  "release": "/var/www/xiangqiao-work/releases/20261006T163119Z",
+  "previous_release": "/var/www/xiangqiao-work/releases/20261005T135427Z",
+  "backup": "/var/backups/xiangqiao-work/20261006T163119Z",
+  "bundle_sha256": "e7508de7f2fc0e07cf208b9875fb33badc833c5279edff93dbd57572dacdd78f",
+  "config_unchanged": false,
+  "config_sha256": "5f2518dbcfff86ebb9ed56900b0935065927390efe98ee4768e54b96071be74f",
+  "previous_config_sha256": "1735fbdb59a286f791e25830e30ce7d40a891bac26e7210190bf6ca5cdbecaf8",
+  "other_sites_unchanged": true,
+  "mode": "demo",
+  "real_transactions_enabled": false,
+  "prototype_path": "/miniapp-preview/",
+  "prototype_sha256": "d95fba63d4edc88d7582e57c572b9ed4687986401366fdae1cb66c6dd85e0c95"
+}

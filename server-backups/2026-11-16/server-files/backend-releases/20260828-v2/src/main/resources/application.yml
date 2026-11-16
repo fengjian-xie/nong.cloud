@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: xiangqiao-agri-platform
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/xiangqiao}
+    username: ${DB_USERNAME:xiangqiao}
+    password: "${DB_PASSWORD}"
+    hikari:
+      maximum-pool-size: ${DB_POOL_SIZE:20}
+  flyway:
+    locations: classpath:db/migration/common,classpath:db/migration/postgresql
+  jackson:
+    default-property-inclusion: non_null
+  mvc:
+    problemdetails:
+      enabled: true
+
+server:
+  port: ${SERVER_PORT:8080}
+  forward-headers-strategy: framework
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+app:
+  security:
+    jwt-secret: "${JWT_SECRET}"
+    data-secret: "${DATA_SECRET}"
+    token-ttl: ${JWT_TTL:PT8H}
+  integration:
+    mode: ${INTEGRATION_MODE:mock}
+  bootstrap:
+    operator-mobile: "${BOOTSTRAP_OPERATOR_MOBILE}"
+    operator-password: "${BOOTSTRAP_OPERATOR_PASSWORD}"
+    county-code: ${BOOTSTRAP_COUNTY_CODE:350981}
+
+logging:
+  pattern:
+    level: "%5p [county:%X{countyCode:-control}]"
