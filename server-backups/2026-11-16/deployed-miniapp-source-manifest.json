@@ -1,0 +1,373 @@
+{
+  "scope": "Source text embedded in the deployed public browser prototype only, not a complete native WeChat project or server backup.",
+  "source_url": "https://work.nong.cloud/miniapp-preview/source-bundle.json",
+  "bundle_path": "public-static/work.nong.cloud/miniapp-preview/source-bundle.json",
+  "bundle_sha256": "2cd33eeef11e63f1b5716602dda826c018ee31b9bc7953fb7d629c0f8cbf71da",
+  "extracted_at_utc": "2026-11-16T00:57:55.326551+00:00",
+  "extraction_policy": "Plain text files only; absolute, parent, hidden, backslash and unexpected-extension paths rejected. No remote code execution or symlinks.",
+  "embedded_source_files": 59,
+  "configured_pages": 11,
+  "files": [
+    {
+      "path": "app.wxss",
+      "bytes": 3321,
+      "sha256": "c3fce8f0cf3eba6a04dfa298644cd64cb9ff4fd4a1b49df929bcc31fe8d67135",
+      "bundle_field": "files[\"app.wxss\"]"
+    },
+    {
+      "path": "components/identity-switcher/index.js",
+      "bytes": 535,
+      "sha256": "2278508ed89c4d5b43a49a4dd41649722e4730600efa6fce3f24978743fcb666",
+      "bundle_field": "files[\"components/identity-switcher/index.js\"]"
+    },
+    {
+      "path": "components/identity-switcher/index.wxml",
+      "bytes": 1445,
+      "sha256": "2539bc553b7ac497c298b18abacef1f2edc51ab104ff15373857194bbe8daf9b",
+      "bundle_field": "files[\"components/identity-switcher/index.wxml\"]"
+    },
+    {
+      "path": "components/identity-switcher/index.wxss",
+      "bytes": 987,
+      "sha256": "41a8a96602f3ee60b02e85405e8a223b60863124734d263150495a6b059057b8",
+      "bundle_field": "files[\"components/identity-switcher/index.wxss\"]"
+    },
+    {
+      "path": "pages/cards/cards.js",
+      "bytes": 2197,
+      "sha256": "aff67fde1e107535ba05bfb510293963fd7e27a1b1eaf8599109e10166e6678a",
+      "bundle_field": "files[\"pages/cards/cards.js\"]"
+    },
+    {
+      "path": "pages/cards/cards.json",
+      "bytes": 45,
+      "sha256": "0c18334f617577b4b46a1dad37bedaabb1cfdaa22e492931c09c29c6567afc6d",
+      "bundle_field": "files[\"pages/cards/cards.json\"]"
+    },
+    {
+      "path": "pages/cards/cards.wxml",
+      "bytes": 2297,
+      "sha256": "b8fcceb68c9ae89fa71d9649f4ec5e02ba0c0f495d0c13294c3728f833c7a516",
+      "bundle_field": "files[\"pages/cards/cards.wxml\"]"
+    },
+    {
+      "path": "pages/cards/cards.wxss",
+      "bytes": 86,
+      "sha256": "043788a0b5fafffdaf3d8311058c08d9bbdd4012119b0fcd3c065c6ee51007d4",
+      "bundle_field": "files[\"pages/cards/cards.wxss\"]"
+    },
+    {
+      "path": "pages/connected/connected.js",
+      "bytes": 20318,
+      "sha256": "ba358b822dcd47e5cd741191b86a5d0edcfd6982208a2126ddbbaa9bd4a0db37",
+      "bundle_field": "files[\"pages/connected/connected.js\"]"
+    },
+    {
+      "path": "pages/connected/connected.json",
+      "bytes": 54,
+      "sha256": "5b7947b236413b056e197fa7deb1febd8a9b5d0507e640f8494318da10f984cc",
+      "bundle_field": "files[\"pages/connected/connected.json\"]"
+    },
+    {
+      "path": "pages/connected/connected.wxml",
+      "bytes": 10885,
+      "sha256": "554544cdd107559f1b03a520a8fee19194ea4494a374dc44e6a02642174f8305",
+      "bundle_field": "files[\"pages/connected/connected.wxml\"]"
+    },
+    {
+      "path": "pages/connected/connected.wxss",
+      "bytes": 633,
+      "sha256": "55e5ff7c97345921da887d7c50fb4777d85a27ce7d0eb8bb99a23fb33567c61a",
+      "bundle_field": "files[\"pages/connected/connected.wxss\"]"
+    },
+    {
+      "path": "pages/farm/farm.js",
+      "bytes": 2507,
+      "sha256": "4a00769aadc8f8409e3d21e6306b275fc80cbc280a7c95e1a673e9bc2f68c129",
+      "bundle_field": "files[\"pages/farm/farm.js\"]"
+    },
+    {
+      "path": "pages/farm/farm.json",
+      "bytes": 42,
+      "sha256": "950d5edf4106f5dc027a9f3de58122ab9a51a770a3841d6e6ffabfb2eec62ed5",
+      "bundle_field": "files[\"pages/farm/farm.json\"]"
+    },
+    {
+      "path": "pages/farm/farm.wxml",
+      "bytes": 5736,
+      "sha256": "80a0c0836a54ad8472d7b39bf599d5073f5c680cae909e0ef96c3949b7dbd94d",
+      "bundle_field": "files[\"pages/farm/farm.wxml\"]"
+    },
+    {
+      "path": "pages/farm/farm.wxss",
+      "bytes": 561,
+      "sha256": "ee8a9b80b90a06371194b7a3d19c6b57f0824d7ebab5b145b425f69ed30e817b",
+      "bundle_field": "files[\"pages/farm/farm.wxss\"]"
+    },
+    {
+      "path": "pages/help/help.js",
+      "bytes": 2956,
+      "sha256": "2f03049de3b8462758f1190c0905a06ac00a16809e45cffb1529942ec0d55965",
+      "bundle_field": "files[\"pages/help/help.js\"]"
+    },
+    {
+      "path": "pages/help/help.json",
+      "bytes": 51,
+      "sha256": "8ad186e7191b112cdb0db469a89069c48550c05529118db4f39a093a5fc39cd3",
+      "bundle_field": "files[\"pages/help/help.json\"]"
+    },
+    {
+      "path": "pages/help/help.wxml",
+      "bytes": 4046,
+      "sha256": "33fc834fc17863d8c53369b6d40a0c95bb0cd37e62427f813a69c841dcb2f084",
+      "bundle_field": "files[\"pages/help/help.wxml\"]"
+    },
+    {
+      "path": "pages/help/help.wxss",
+      "bytes": 366,
+      "sha256": "3c00fba552e844d87a50d99618b5f04b6a063da2bccc35d37d7a91d4f7eda8b3",
+      "bundle_field": "files[\"pages/help/help.wxss\"]"
+    },
+    {
+      "path": "pages/index/index.js",
+      "bytes": 515,
+      "sha256": "d6e6edd1e5a835b7f85d16f71df3e552bd9bc44a8d1b0b3381d0a1876cf93bb0",
+      "bundle_field": "files[\"pages/index/index.js\"]"
+    },
+    {
+      "path": "pages/index/index.json",
+      "bytes": 36,
+      "sha256": "00406de8f6c632f123ae0b75ddcbb2d0228ae9a691b1751ce0ae5d5bf1116582",
+      "bundle_field": "files[\"pages/index/index.json\"]"
+    },
+    {
+      "path": "pages/index/index.wxml",
+      "bytes": 1765,
+      "sha256": "774c025bf58c1144d426a0ccac69fa179552bc9270e49ab034657f506c95f3e8",
+      "bundle_field": "files[\"pages/index/index.wxml\"]"
+    },
+    {
+      "path": "pages/index/index.wxss",
+      "bytes": 63,
+      "sha256": "0101db3789856e49c716e58d2fb4d7b5da98e6931c693e04214e2287fdd8dfa1",
+      "bundle_field": "files[\"pages/index/index.wxss\"]"
+    },
+    {
+      "path": "pages/login/login.js",
+      "bytes": 1887,
+      "sha256": "c4f682e07ae45237aef95f715ca913b31c2a1d75b3943858d10ab0d79f986e99",
+      "bundle_field": "files[\"pages/login/login.js\"]"
+    },
+    {
+      "path": "pages/login/login.json",
+      "bytes": 42,
+      "sha256": "cbe42e593c7000c530e85d0368b954cb002ab5bcadc8900dc1e56f46bf0ce138",
+      "bundle_field": "files[\"pages/login/login.json\"]"
+    },
+    {
+      "path": "pages/login/login.wxml",
+      "bytes": 2159,
+      "sha256": "6e6cb9658802a7fbb78ffcf05472e1e5b31fb46edea260b5761458d8d2e349b5",
+      "bundle_field": "files[\"pages/login/login.wxml\"]"
+    },
+    {
+      "path": "pages/login/login.wxss",
+      "bytes": 29,
+      "sha256": "167e08d6fbf098531116346bd23c27a589ed0b6ce3c412ee702ecc0bcf1bd8b0",
+      "bundle_field": "files[\"pages/login/login.wxss\"]"
+    },
+    {
+      "path": "pages/me/me.js",
+      "bytes": 1214,
+      "sha256": "45f2e66e60bef75f647258a7c7612750fb37b4ff52d0b6697f0a626236a6cbce",
+      "bundle_field": "files[\"pages/me/me.js\"]"
+    },
+    {
+      "path": "pages/me/me.json",
+      "bytes": 36,
+      "sha256": "b6d5a1eeb7113e589aaabd6597912fb26b4e6f4f84e9014156eda447d6aa8abf",
+      "bundle_field": "files[\"pages/me/me.json\"]"
+    },
+    {
+      "path": "pages/me/me.wxml",
+      "bytes": 1526,
+      "sha256": "c4fdd1da6aafed5b9b524b6f0fcd77b1db2dd8035c49888bd5ba2c79623fb45d",
+      "bundle_field": "files[\"pages/me/me.wxml\"]"
+    },
+    {
+      "path": "pages/me/me.wxss",
+      "bytes": 36,
+      "sha256": "12e46989c2686646e9ba3d8b991b83d0dc156329a8cb30f221ae225e91e4feb5",
+      "bundle_field": "files[\"pages/me/me.wxss\"]"
+    },
+    {
+      "path": "pages/message/message.js",
+      "bytes": 2116,
+      "sha256": "4c20aa6e99151f3100962a258a724823c0fc693e9d81cfe5fd35390870cc88a2",
+      "bundle_field": "files[\"pages/message/message.js\"]"
+    },
+    {
+      "path": "pages/message/message.json",
+      "bytes": 36,
+      "sha256": "f6c34ea6c1a73568bf525ab62ca6890c1883cb24a42456ba57cd8f53430a9cc6",
+      "bundle_field": "files[\"pages/message/message.json\"]"
+    },
+    {
+      "path": "pages/message/message.wxml",
+      "bytes": 2096,
+      "sha256": "ab7be1d44cb84846424b1c80e02de4f919118acbf111744e6de17a4a3d7919cf",
+      "bundle_field": "files[\"pages/message/message.wxml\"]"
+    },
+    {
+      "path": "pages/message/message.wxss",
+      "bytes": 788,
+      "sha256": "99945a76b8993ea287aabd46a43602b959f8c72e22779c2d3982dfc71eb75098",
+      "bundle_field": "files[\"pages/message/message.wxss\"]"
+    },
+    {
+      "path": "pages/module/module.js",
+      "bytes": 7098,
+      "sha256": "84c42daaa5770b6c6e52999f727af4985f576292f70019ba68be594641cd905e",
+      "bundle_field": "files[\"pages/module/module.js\"]"
+    },
+    {
+      "path": "pages/module/module.json",
+      "bytes": 42,
+      "sha256": "b8e21a4a230ffd5fd8758daf535653cb7bf0abe2c92ba467f10aeb03b6c187b6",
+      "bundle_field": "files[\"pages/module/module.json\"]"
+    },
+    {
+      "path": "pages/module/module.wxml",
+      "bytes": 7319,
+      "sha256": "3dafc10c708fe085fb429cc4908ffc0b83cf342bfa108ecb55abee4f0e6e3eea",
+      "bundle_field": "files[\"pages/module/module.wxml\"]"
+    },
+    {
+      "path": "pages/module/module.wxss",
+      "bytes": 718,
+      "sha256": "0c7831bc803eab56dbbd7e644f50d963e966e5273d67e7aa562ec57579ea0e18",
+      "bundle_field": "files[\"pages/module/module.wxss\"]"
+    },
+    {
+      "path": "pages/value/value.js",
+      "bytes": 7753,
+      "sha256": "6c11477bdb5e1a1b1756240fcb70371380af144782967bd8bfbb21d72f657629",
+      "bundle_field": "files[\"pages/value/value.js\"]"
+    },
+    {
+      "path": "pages/value/value.json",
+      "bytes": 51,
+      "sha256": "a6bd7525392413051d398a4398c4dc179ac9c0728b3c2fb0e8e98cffa021640e",
+      "bundle_field": "files[\"pages/value/value.json\"]"
+    },
+    {
+      "path": "pages/value/value.wxml",
+      "bytes": 7053,
+      "sha256": "d15022728afb748c4445c8d4a8d6d57682f2ff247c4f7dca219c5df7ad5cd504",
+      "bundle_field": "files[\"pages/value/value.wxml\"]"
+    },
+    {
+      "path": "pages/value/value.wxss",
+      "bytes": 644,
+      "sha256": "c2b5b630b926dfafd2a18774a12db4d988231c1892db6105c2b25a0a8195c529",
+      "bundle_field": "files[\"pages/value/value.wxss\"]"
+    },
+    {
+      "path": "pages/workspace/workspace.js",
+      "bytes": 1217,
+      "sha256": "e7dd604e0368672f78199d20e83b73ba10e7a2ea313138578f50c3e769d04366",
+      "bundle_field": "files[\"pages/workspace/workspace.js\"]"
+    },
+    {
+      "path": "pages/workspace/workspace.json",
+      "bytes": 39,
+      "sha256": "5f52fc10257cbb8599a84420f296502dbe46ad3a84dda6dca08fb747db173925",
+      "bundle_field": "files[\"pages/workspace/workspace.json\"]"
+    },
+    {
+      "path": "pages/workspace/workspace.wxml",
+      "bytes": 1529,
+      "sha256": "ec6056a855b4509698f0457ff8e6cc4f35363e303c2e41fb1d8c10e84d121ce8",
+      "bundle_field": "files[\"pages/workspace/workspace.wxml\"]"
+    },
+    {
+      "path": "pages/workspace/workspace.wxss",
+      "bytes": 293,
+      "sha256": "61223d855407144b41c4005482c83d81dffea8e5c47931c756f81a1631252e6e",
+      "bundle_field": "files[\"pages/workspace/workspace.wxss\"]"
+    },
+    {
+      "path": "utils/address.js",
+      "bytes": 796,
+      "sha256": "347acdcc666da2513f45ae002b3f2bd5d845b92698fa329f69be7e5efd1b679b",
+      "bundle_field": "files[\"utils/address.js\"]"
+    },
+    {
+      "path": "utils/business-groups-data.js",
+      "bytes": 3156,
+      "sha256": "fded790ce6c75b530da221c5b0764ce02b2e3d17254d124ea2f6c85c2667ff03",
+      "bundle_field": "files[\"utils/business-groups-data.js\"]"
+    },
+    {
+      "path": "utils/business-groups.js",
+      "bytes": 932,
+      "sha256": "dc39dee766aabcf63814bd202405849c4ab6efc3fc0fd88c27268a8ce3e9cc86",
+      "bundle_field": "files[\"utils/business-groups.js\"]"
+    },
+    {
+      "path": "utils/catalog.js",
+      "bytes": 6169,
+      "sha256": "f2d1e1ac80c0e8cc9c974907b52812ebd0c98de2fcb33c475af93ee7bfdd81b6",
+      "bundle_field": "files[\"utils/catalog.js\"]"
+    },
+    {
+      "path": "utils/connection.js",
+      "bytes": 5494,
+      "sha256": "c23769cfb4e7ec1c925785f44aff4cb80eb3986ac06c35c1c512dcd20db2b7f5",
+      "bundle_field": "files[\"utils/connection.js\"]"
+    },
+    {
+      "path": "utils/farm-data.js",
+      "bytes": 1717,
+      "sha256": "7deb7b27cb3c6a7ee7b5aff4e50f203bbbe6d7a709039275515caefe85c3ebda",
+      "bundle_field": "files[\"utils/farm-data.js\"]"
+    },
+    {
+      "path": "utils/message-ui.js",
+      "bytes": 1123,
+      "sha256": "5480b88603d80dbfa712a925b8644ca27571617e7e3731635a0b05256edda34c",
+      "bundle_field": "files[\"utils/message-ui.js\"]"
+    },
+    {
+      "path": "utils/module-ui.js",
+      "bytes": 7600,
+      "sha256": "042bec6f6ebfd1e38673d0d43d75708b31037e263b4194d7de45a1507bd1303f",
+      "bundle_field": "files[\"utils/module-ui.js\"]"
+    },
+    {
+      "path": "utils/session.js",
+      "bytes": 2491,
+      "sha256": "773d582f73bd8852119fba2a61d307f86df18fb1a2ef9f4748f6424dc7d4cfc9",
+      "bundle_field": "files[\"utils/session.js\"]"
+    },
+    {
+      "path": "utils/support.js",
+      "bytes": 3090,
+      "sha256": "b51407058c197a484d583607888e28579a7b794473b4f5252253cc9e12440577",
+      "bundle_field": "files[\"utils/support.js\"]"
+    },
+    {
+      "path": "utils/value-data.js",
+      "bytes": 6134,
+      "sha256": "23762296f6354f572e8e59f8df323d531517c4b8b8522a6e989f8d4dc342e18f",
+      "bundle_field": "files[\"utils/value-data.js\"]"
+    },
+    {
+      "path": "app.json",
+      "bytes": 1750,
+      "sha256": "77091e0ae07a7334b41d855c4e7326b22331e9257b1f7d042736610c4cdb2220",
+      "bundle_field": "config",
+      "note": "JSON serialization of the deployed config object; original formatting is unavailable."
+    }
+  ]
+}

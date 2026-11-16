@@ -1,0 +1,3 @@
+.step { display: flex; align-items: center; gap: 20rpx; padding: 12rpx 0; }.step-number { color: #0F3D2E; background: #E6EFE6; width: 52rpx; height: 52rpx; text-align: center; line-height: 52rpx; border-radius: 50%; font-size: 27rpx; }
+.list-toolbar { display: flex; gap: 24rpx; margin-bottom: 12rpx; }.list-toolbar button { padding: 12rpx 0; color: #747B75; }.list-toolbar .active-filter { color: #0F3D2E; border-bottom: 4rpx solid #0F3D2E; }.kv text { max-width: 65%; overflow-wrap: anywhere; }
+.picker-value { display: flex; align-items: center; justify-content: space-between; }.region-columns { display: flex; gap: 12rpx; }.region-columns .input { flex: 1; min-width: 0; padding: 16rpx 10rpx; font-size: 25rpx; }

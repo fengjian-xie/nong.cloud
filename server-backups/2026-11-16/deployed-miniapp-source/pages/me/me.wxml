@@ -1,0 +1,7 @@
+<view class="page">
+ <view class="brand"><image class="brand-icon" mode="aspectFit" src="/assets/vi-mark.png"/><view><text class="brand-name">我的乡桥</text><text class="small muted">连接乡土，共享丰收</text></view></view>
+ <block wx:if="{{context}}"><text class="title">{{context.account.name}}（示例）</text><view class="muted">{{context.identity.org}}</view><identity-switcher context="{{context}}" bindchange="switchChanged"/>
+ <view class="surface"><text class="heading">账号与服务</text><button class="row" bindtap="application"><text>添加角色</text><view class="chevron"/></button><button class="row" bindtap="messages"><text>当前身份消息</text><view class="chevron"/></button><button class="row" bindtap="help"><text>帮助与呼叫中心</text><view class="chevron"/></button><button class="row" bindtap="privacy"><text>数据与隐私</text><view class="chevron"/></button></view><button class="secondary" bindtap="logout">退出全部身份</button></block>
+ <view wx:else class="empty"><text class="title">欢迎来到乡桥。</text><view class="intro muted">游客可浏览公开农场，私有业务需账号授权。</view><button class="primary" bindtap="login">进入演示账号</button><button class="secondary" bindtap="help">帮助与呼叫中心</button><button class="secondary" bindtap="privacy">数据与隐私说明</button></view>
+ <view class="note">农户平台服务免费；农事卡办卡、补卡均100元。实际产品与服务另行约定。</view>
+</view>

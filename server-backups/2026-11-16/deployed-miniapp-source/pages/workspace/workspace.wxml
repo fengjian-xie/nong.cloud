@@ -1,0 +1,8 @@
+<view class="page"><block wx:if="{{context}}">
+ <text class="small">{{context.identity.org}}</text><text class="title">{{headline}}</text><view class="intro">一次登录，多种身份。按业务分组，不再重复建后台。</view>
+ <identity-switcher context="{{context}}" bindchange="switchChanged"/>
+ <button wx:if="{{cards}}" class="card-entry" bindtap="openCards"><view class="entry-heading">我的农事卡<view class="chevron white-chevron"/></view><view class="small">办卡、补卡均100元；农户平台服务免费。</view></button>
+ <block wx:for="{{groups}}" wx:key="title" wx:for-item="group"><view class="surface" wx:if="{{group.modules.length}}"><text class="heading">{{group.title}}</text><button wx:for="{{group.modules}}" wx:key="id" data-id="{{item.id}}" class="row" bindtap="openModule"><text>{{item.title}}</text><view class="chevron"/></button></view></block>
+ <button wx:if="{{context.identity.role === 'consumer'}}" class="primary gap" bindtap="goFarm">浏览乡桥农场</button>
+ </block><view wx:else class="empty"><text class="title">一次登录，多种身份。</text><view class="muted intro">种植户也能是农服队。切换主体与身份，无需重新登录。</view><button class="primary" bindtap="login">进入演示账号</button><view class="note">真实微信登录与服务端授权待接入。</view></view>
+ <button class="secondary" bindtap="help">帮助与呼叫中心</button><view class="demo-foot">交互演示 · 不接真实硬件、付款或合同</view></view>
